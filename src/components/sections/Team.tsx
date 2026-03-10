@@ -21,8 +21,8 @@ const team = [
     {
         name: "Vandan Mandloi",
         role: "E-Commerce & Operations Executive",
-        bio: "Vandan executes at the intersection of e-commerce optimization and high-level operations. With a 7-year track record that spans from managing complex logistics in corporate management programs to scaling his own multi-platform e-commerce ventures as Managing Director of Herculees House. His entrepreneurial mindset and hands-on experience ensure our strategic plans are always grounded in rigorous financial analysis, team leadership, and flawless operational execution.",
-        skills: ["Optimizing Operations", "E-Commerce", "Data Analysis"],
+        bio: "Vandan has spent almost a decade delivering  digital-led strategies and campaigns for large scale corporate enterprises through his agency LitLabs.\n\nVandan brings an entrepeneurial, scale up mindset to everything he works on, offering front-line expertise in delivering practical AI solutions, operational excellence, process automations and multichannel digital advertising, often combining all of these disciplines to deliver the in digital-led solutions from which business can grow.",
+        skills: ["Practical AI", "Operational Excellence", "Process Automation"],
         image: "/images/vandan.jpeg"
     }
 ];
@@ -35,8 +35,14 @@ export const Team = () => {
                     <h2 className="font-display text-4xl md:text-6xl font-black uppercase tracking-tighter text-foreground">
                         The Core <span className="text-foreground/40">Collective.</span>
                     </h2>
-                    <p className="mt-6 max-w-2xl text-lg text-foreground/70 font-sans">
-                        We aren't just strategists; we are operators. Our core team brings decades of combined experience across marketing leadership, sales acceleration, and operational execution.
+                    <p className="mt-6 max-w-2xl text-xl font-semibold text-foreground font-sans">
+                        If you want better ROI, the whole process needs to be looked at by people who understand each part of it who speak a common language.
+                    </p>
+                    <p className="mt-4 max-w-2xl text-lg text-foreground/70 font-sans">
+                        That is why we work as a collective.
+                    </p>
+                    <p className="mt-4 max-w-2xl text-lg text-foreground/70 font-sans">
+                        Different expertise, one commercial view, helping businesses improve the full path from attention to revenue.
                     </p>
                 </div>
 
@@ -70,9 +76,11 @@ export const Team = () => {
                                 <p className="text-brand-indigo font-mono text-sm uppercase tracking-widest mt-2">{member.role}</p>
                             </div>
 
-                            <p className="text-foreground/70 font-sans leading-relaxed text-balance">
-                                {member.bio}
-                            </p>
+                            <div className="text-foreground/70 font-sans leading-relaxed text-balance flex flex-col gap-4">
+                                {member.bio.split('\n\n').map((paragraph, pIdx) => (
+                                    <p key={pIdx}>{paragraph}</p>
+                                ))}
+                            </div>
 
                             <div className="flex flex-wrap gap-2 mt-auto pt-4">
                                 {member.skills.map((skill, sIdx) => (

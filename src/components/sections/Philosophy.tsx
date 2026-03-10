@@ -10,11 +10,14 @@ export const Philosophy = () => {
                 </div>
 
                 <div className="md:w-7/12 flex flex-col gap-8">
-                    <p className="font-sans text-2xl md:text-4xl font-medium leading-tight text-balance">
-                        Chapeau Collective is built for the modern era, where data, creativity, and technology converge.
+                    <p className="font-sans text-2xl md:text-3xl font-semibold leading-tight text-balance">
+                        Chapeau Collective is built for the way businesses grow today.
                     </p>
-                    <p className="font-sans text-lg md:text-xl text-background/70 leading-relaxed max-w-2xl">
-                        We are the modern agency. No fluff, no archaic templates. Just purely strategic, highly skilled execution designed to build unstoppable momentum for your brand. We understand that in a world driven by attention, the only metric that matters is exceptional growth.
+                    <p className="font-sans text-lg md:text-xl text-background/80 leading-relaxed max-w-2xl">
+                        Marketing, sales and AI no longer sit separately. Together they enable revenue.
+                    </p>
+                    <p className="font-sans text-lg md:text-xl text-background/80 leading-relaxed max-w-2xl">
+                        We deliver done-for-you commercial support, so your business gets clearer demand, stronger conversion and better follow-through.
                     </p>
 
                     <div className="pt-8">

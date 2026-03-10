@@ -16,25 +16,25 @@ const services: ServiceItem[] = [
     {
         id: "marketing",
         title: "Marketing",
-        subtitle: "Brand ecosystems that convert.",
+        subtitle: "Get the message right.",
         description:
-            "We craft narratives and digital presences that capture attention and drive meaningful engagement.",
+            "So the right buyers get it faster.",
         color: "bg-brand-indigo",
     },
     {
         id: "sales",
         title: "Sales",
-        subtitle: "Accelerated revenue operations.",
+        subtitle: "Turn interest into revenue.",
         description:
-            "From lead generation to closing strategies, we optimize every touchpoint in your sales pipeline.",
+            "With better conversations, tighter process and stronger follow-through.",
         color: "bg-brand-gold",
     },
     {
         id: "ai",
         title: "AI Services",
-        subtitle: "Intelligent automation.",
+        subtitle: "Make the systems useful.",
         description:
-            "Bespoke AI implementations that scale your capabilities, turning complex data into actionable growth.",
+            "With practical AI and automation that help revenue move.",
         color: "bg-white",
     },
 ];

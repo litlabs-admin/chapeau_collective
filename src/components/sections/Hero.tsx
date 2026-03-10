@@ -15,11 +15,11 @@ export const Hero = () => {
 
             <div className="container relative mx-auto px-6 mt-16 md:mt-0 flex-grow flex flex-col justify-center h-full">
                 <div className="max-w-full z-10 pt-20 md:pt-10">
-                    <h1 className="font-display font-black leading-[0.9] tracking-tighter uppercase flex flex-col text-foreground" style={{ fontSize: "clamp(2.5rem, 9vw, 8rem)" }}>
-                        <div style={{ overflow: "hidden" }} className="pb-1 md:pb-3">
+                    <h1 className="font-display font-black leading-[0.9] tracking-tighter uppercase flex flex-col text-foreground overflow-visible" style={{ fontSize: "clamp(2rem, 7.5vw, 7rem)" }}>
+                        <div className="overflow-hidden pb-1 md:pb-3 whitespace-nowrap">
                             <TextReveal text="CHAPEAU" delay={1.2} />
                         </div>
-                        <div style={{ overflow: "hidden" }} className="pb-4 text-foreground/70">
+                        <div className="overflow-hidden pb-6 text-foreground/70 whitespace-nowrap">
                             <TextReveal text="COLLECTIVE." delay={1.6} />
                         </div>
                     </h1>
@@ -30,7 +30,7 @@ export const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                         className="mt-8 max-w-xl text-lg sm:text-xl md:text-2xl text-foreground/70 font-sans leading-relaxed text-balance"
                     >
-                        We operate at the apex of Marketing, Sales, and Artificial Intelligence to build unstoppable revenue engines.
+                        Driving revenue with done-for-you commercial expertise, built on marketing strategy, sales expertise and AI enablement.
                     </motion.p>
 
                     <motion.div
@@ -50,7 +50,7 @@ export const Hero = () => {
             {/* Marquee Ticker placed absolutely at the bottom or relatively below depending on layout */}
             <div className="absolute bottom-0 left-0 w-full rotate-[-1deg] scale-105 origin-bottom-left pb-4 z-10">
                 <Marquee
-                    text="MARKETING ARCHITECTS // SALES ACCELERATORS // AI INTEGRATORS // MARKETING ARCHITECTS //"
+                    text="MARKETING ARCHITECTS // SALES ACCELERATORS // AI INTEGRATORS //"
                     speed={25}
                     className="bg-brand-indigo text-white rotate-[2deg] shadow-2xl"
                 />
