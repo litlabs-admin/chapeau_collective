@@ -4,7 +4,7 @@ import { ServiceGrid } from "../ui/service-grid";
 
 export const Services = () => {
     return (
-        <section className="bg-background py-32 md:py-48 w-full relative z-20">
+        <section id="services" className="bg-background py-32 md:py-48 w-full relative z-20">
             <div className="container mx-auto px-6 mb-20 md:mb-32">
                 <h2 className="font-display text-5xl md:text-7xl font-bold uppercase tracking-tight text-foreground">
                     The Three <br />

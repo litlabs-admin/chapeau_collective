@@ -8,23 +8,25 @@ export const Navbar = () => {
 
     const navLinks = [
         { title: "Home", href: "#" },
-        { title: "Services", href: "#" },
-        { title: "Philosophy", href: "#" },
-        { title: "Work", href: "#" },
-        { title: "Contact", href: "#" },
+        { title: "Services", href: "#services" },
+        { title: "Philosophy", href: "#philosophy" },
+        { title: "Work", href: "#work" },
+        { title: "Contact", href: "#contact" },
     ];
 
     return (
         <>
-            <header className="fixed top-0 left-0 w-full z-[100] px-6 py-6 text-white bg-background/50 backdrop-blur-md border-b border-white/5 transition-all">
+            {/* Header — always on top of everything including the menu */}
+            <header className="fixed top-0 left-0 w-full z-[200] px-6 py-6 text-white bg-background/50 backdrop-blur-md border-b border-white/5 transition-all">
                 <div className="container mx-auto flex justify-between items-center">
-                    <div className="font-display font-bold text-xl tracking-widest uppercase z-[101]">
+                    <div className="font-display font-bold text-xl tracking-widest uppercase">
                         <a href="#">Chapeau Collective</a>
                     </div>
 
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="group flex flex-col gap-1.5 w-8 h-8 justify-center items-end z-[101]"
+                        className="group flex flex-col gap-1.5 w-8 h-8 justify-center items-end"
+                        aria-label="Toggle menu"
                     >
                         <motion.div
                             animate={{
@@ -50,7 +52,7 @@ export const Navbar = () => {
                 </div>
             </header>
 
-            {/* Full Screen Overlay Menu */}
+            {/* Full Screen Overlay Menu — sits below the header bar */}
             <AnimatePresence>
                 {isMenuOpen && (
                     <motion.nav
@@ -58,7 +60,7 @@ export const Navbar = () => {
                         animate={{ y: 0 }}
                         exit={{ y: "-100%" }}
                         transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-                        className="fixed inset-0 z-[90] bg-brand-indigo flex flex-col justify-center px-6 md:px-16"
+                        className="fixed inset-0 z-[190] bg-brand-indigo flex flex-col justify-center px-6 md:px-16 pt-24"
                     >
                         <div className="container mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-16">
                             {/* Links */}
@@ -96,10 +98,10 @@ export const Navbar = () => {
                                     <h4 className="uppercase tracking-widest text-xs font-semibold mb-2">
                                         Connect
                                     </h4>
-                                    <a href="#" className="block hover:text-white transition-colors">
+                                    <a href="mailto:hello@chapeau.com" className="block hover:text-white transition-colors">
                                         hello@chapeau.com
                                     </a>
-                                    <a href="#" className="block hover:text-white transition-colors">
+                                    <a href="tel:+18005550199" className="block hover:text-white transition-colors">
                                         +1 800 555 0199
                                     </a>
                                 </div>
@@ -107,13 +109,13 @@ export const Navbar = () => {
                                     <h4 className="uppercase tracking-widest text-xs font-semibold mb-2">
                                         Socials
                                     </h4>
-                                    <a href="#" className="block hover:text-white transition-colors">
+                                    <a href="#" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">
                                         Instagram
                                     </a>
-                                    <a href="#" className="block hover:text-white transition-colors">
+                                    <a href="#" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">
                                         Twitter / X
                                     </a>
-                                    <a href="#" className="block hover:text-white transition-colors">
+                                    <a href="#" target="_blank" rel="noopener noreferrer" className="block hover:text-white transition-colors">
                                         LinkedIn
                                     </a>
                                 </div>

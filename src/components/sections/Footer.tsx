@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export const Footer = () => {
     return (
-        <footer className="bg-background w-full relative overflow-hidden border-t border-foreground/10">
+        <footer id="contact" className="bg-background w-full relative overflow-hidden border-t border-foreground/10">
             <div className="container mx-auto px-6 py-24 md:py-32">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-16">
 

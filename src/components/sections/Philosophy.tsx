@@ -1,6 +1,6 @@
 export const Philosophy = () => {
     return (
-        <section className="bg-foreground text-background py-32 md:py-48 w-full">
+        <section id="philosophy" className="bg-foreground text-background py-32 md:py-48 w-full">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16 md:gap-32">
                 <div className="md:w-5/12">
                     <h2 className="font-display text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
