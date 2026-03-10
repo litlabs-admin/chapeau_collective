@@ -42,7 +42,7 @@ export const CaseStudies = () => {
     return (
         <section
             ref={containerRef}
-            className="bg-background relative py-32 md:py-48 w-full border-t border-foreground/5 z-20 scroll-mt-20"
+            className="bg-background relative pt-8 md:pt-12 pb-16 md:pb-24 w-full border-t border-foreground/5 z-20 scroll-mt-20"
             id="work"
         >
             <div className="container mx-auto px-6 mb-16 md:mb-32">

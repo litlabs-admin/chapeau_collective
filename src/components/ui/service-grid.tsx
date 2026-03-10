@@ -16,9 +16,9 @@ const services: ServiceItem[] = [
     {
         id: "marketing",
         title: "Marketing",
-        subtitle: "Get the message right.",
+        subtitle: "Let's tell your story.",
         description:
-            "So the right buyers get it faster.",
+            "Helping buyers realise your value. Quicker.",
         color: "bg-brand-indigo",
     },
     {
@@ -26,7 +26,7 @@ const services: ServiceItem[] = [
         title: "Sales",
         subtitle: "Turn interest into revenue.",
         description:
-            "With better conversations, tighter process and stronger follow-through.",
+            "With better conversations, tighter processes and quicker decisions.",
         color: "bg-brand-gold",
     },
     {
@@ -34,7 +34,7 @@ const services: ServiceItem[] = [
         title: "AI Services",
         subtitle: "Make the systems useful.",
         description:
-            "With practical AI and automation that help revenue move.",
+            "With practical AI and automation that Drive sustainable growth with better conversations, accelerated pipeline and smart processes.",
         color: "bg-white",
     },
 ];

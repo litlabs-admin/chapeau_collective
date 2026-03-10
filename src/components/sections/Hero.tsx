@@ -30,7 +30,7 @@ export const Hero = () => {
                         transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                         className="mt-8 max-w-xl text-lg sm:text-xl md:text-2xl text-foreground/70 font-sans leading-relaxed text-balance"
                     >
-                        Driving revenue with done-for-you commercial expertise, built on marketing strategy, sales expertise and AI enablement.
+                        Driving revenue with done-for-you commercial expertise, built on marketing strategy, sales leadership and AI enablement.
                     </motion.p>
 
                     <motion.div
@@ -40,7 +40,7 @@ export const Hero = () => {
                         className="mt-10 group cursor-pointer inline-flex items-center gap-4 mb-24 md:mb-32"
                     >
                         <a href="#contact" className="relative overflow-hidden rounded-full bg-foreground text-background px-8 py-4 font-sans font-semibold text-lg transition-transform duration-300 group-hover:scale-105 inline-block">
-                            <span className="relative z-10">Commission Us</span>
+                            <span className="relative z-10">Let’s Talk</span>
                             <div className="absolute inset-0 bg-brand-indigo translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300 ease-out z-0" />
                         </a>
                     </motion.div>

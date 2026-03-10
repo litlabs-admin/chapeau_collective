@@ -1,11 +1,11 @@
 export const Philosophy = () => {
     return (
-        <section id="philosophy" className="bg-foreground text-background py-32 md:py-48 w-full">
+        <section id="philosophy" className="bg-foreground text-background py-16 md:py-24 w-full">
             <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16 md:gap-32">
                 <div className="md:w-5/12">
                     <h2 className="font-display text-5xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9]">
                         We Don{"'"}t <br /> Just Advise.<br />
-                        <span className="text-brand-indigo">We Execute.</span>
+                        <span className="text-brand-indigo">We Deliver.</span>
                     </h2>
                 </div>
 
@@ -14,10 +14,10 @@ export const Philosophy = () => {
                         Chapeau Collective is built for the way businesses grow today.
                     </p>
                     <p className="font-sans text-lg md:text-xl text-background/80 leading-relaxed max-w-2xl">
-                        Marketing, sales and AI no longer sit separately. Together they enable revenue.
+                        Marketing, sales and AI no longer sit separately. Together they drive your growth.
                     </p>
                     <p className="font-sans text-lg md:text-xl text-background/80 leading-relaxed max-w-2xl">
-                        We deliver done-for-you commercial support, so your business gets clearer demand, stronger conversion and better follow-through.
+                        Our done-for-you solution will harness these three crucial commercial levers for the benefit of your business; creating demand, driving growth and helping your customer base realise more value.
                     </p>
 
                     <div className="pt-8">

@@ -6,22 +6,22 @@ import Image from "next/image";
 const team = [
     {
         name: "Gordon Ross",
-        role: "Head of Marketing & Strategy",
-        bio: "Gordon is a strategic marketing executive with over a decade of expertise scaling businesses from start-up to enterprise level. As the Founder of GR23 Marketing and former Head of Marketing for major brands like Webhelp, Gofor, and FreeAgent, he specializes in brand development and multi-channel acquisition. Gordon is the creator of the 'Chapeau' initiative—a weekly tradition (French for 'a tip of the hat') to honor exceptional people, products, and companies. Through this ethos, he fosters collaborative growth and executes targeted strategies for cutting-edge clients like Guiide and TIBG.",
+        role: "Marketing and Strategy Lead",
+        bio: "Gordon is a marketing specialist, with almost 20 years experience  across SaaS, IT, financial services, electric vehicles, management consultancy, insurance and sports sponsorship, proven in learning new markets fast and focusing marketing efforts where they matter most.\n\nAlongside his role as founder of GR23 Marketing where he helps SME businesses achieve the growth their hard work deserves, he’s led marketing teams with global businesses such as Webhelp (now Concentrix) and Ageas, and smaller, agile operations in FreeAgent, Kick ICT and Gofor.\n\nGordon brings practical strategies, clear consistent messaging and much more to the collective, ready to get you the marketing momentum you need to help your business grow.",
         skills: ["Strategic Marketing", "Customer Acquisition", "Brand & Content"],
         image: "/images/gordon.png"
     },
     {
         name: "Will Sinclair",
-        role: "Fractional Sales Director",
-        bio: "Will sits at the core of our sales and leadership development engine. Operating as 'Sales Geek Scotland', he is a Fractional Sales Director and licensed Insights Practitioner who transforms behavioral sales infrastructure. With an extensive background in B2B performance coaching across teams and sectors, he connects personality, process, and performance. Will aligns high-performance sales process design with manager coaching discipline to build predictable, repeatable revenue generation systems.",
+        role: "Sales and Revenue Lead",
+        bio: "Will sits at the core of our sales engine with a skillset that spans leadership, methodology, coaching and execution. With a wide-ranging career delivering sales consultancy, leadership and best practice to businesses of all stages and sizes, Will currently supports businesses across the UK as part of the hugely successful Sales Geek franchise.\n\nWill brings particular, extensive experience in driving  B2B sales performance, aligning high-performance sales process design with coaching discipline to build predictable, repeatable revenue generation systems.",
         skills: ["Sales Leadership", "Executive Coaching", "Change Management"],
         image: "/images/willsinclair.jpeg"
     },
     {
         name: "Vandan Mandloi",
-        role: "E-Commerce & Operations Executive",
-        bio: "Vandan has spent almost a decade delivering  digital-led strategies and campaigns for large scale corporate enterprises through his agency LitLabs.\n\nVandan brings an entrepeneurial, scale up mindset to everything he works on, offering front-line expertise in delivering practical AI solutions, operational excellence, process automations and multichannel digital advertising, often combining all of these disciplines to deliver the in digital-led solutions from which business can grow.",
+        role: "AI and Digital Operations Lead",
+        bio: "Vandan has spent almost a decade delivering digital-led strategies and campaigns for large scale corporate enterprises through his agency LitLabs.\n\nVandan brings an entrepreneurial, scale up mindset to everything he works on, offering front-line expertise in delivering practical AI workflows and agents, operational excellence and multichannel digital advertising, often combining all of these disciplines to deliver the  digital-led solutions from which business can grow.",
         skills: ["Practical AI", "Operational Excellence", "Process Automation"],
         image: "/images/vandan.jpeg"
     }
@@ -29,7 +29,7 @@ const team = [
 
 export const Team = () => {
     return (
-        <section id="team" className="relative py-24 md:py-32 bg-background border-t border-foreground/10">
+        <section id="team" className="relative py-12 md:py-16 bg-background border-t border-foreground/10">
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="mb-16 md:mb-24">
                     <h2 className="font-display text-4xl md:text-6xl font-black uppercase tracking-tighter text-foreground">

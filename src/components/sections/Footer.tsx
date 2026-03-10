@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export const Footer = () => {
     return (
         <footer id="contact" className="bg-background w-full relative overflow-hidden border-t border-foreground/10">
-            <div className="container mx-auto px-6 py-24 md:py-32">
+            <div className="container mx-auto px-6 pt-12 md:pt-16 pb-8">
                 <div className="flex flex-col md:flex-row justify-between items-start gap-16">
 
                     <div className="w-full md:w-1/2 flex flex-col items-start">
@@ -42,11 +42,11 @@ export const Footer = () => {
                     <div className="w-full md:w-1/3 grid grid-cols-2 gap-8 md:gap-16">
                         <div className="flex flex-col gap-4">
                             <h4 className="font-sans font-semibold text-foreground tracking-widest uppercase text-sm opacity-50 mb-2">
-                                Offices
+                                Resources
                             </h4>
-                            <p className="font-sans text-foreground/80">New York</p>
-                            <p className="font-sans text-foreground/80">London</p>
-                            <p className="font-sans text-foreground/80">Remote Global</p>
+                            <a href="#" className="font-sans text-foreground/80 hover:text-brand-indigo transition-colors uppercase text-sm">Privacy Policy</a>
+                            <a href="#" className="font-sans text-foreground/80 hover:text-brand-indigo transition-colors uppercase text-sm">Terms of Service</a>
+                            <a href="#contact" className="font-sans text-foreground/80 hover:text-brand-indigo transition-colors uppercase text-sm">Contact Us</a>
                         </div>
 
                         <div className="flex flex-col gap-4">
@@ -60,19 +60,10 @@ export const Footer = () => {
                     </div>
                 </div>
 
-                <div className="mt-32 pt-8 flex flex-col md:flex-row items-center justify-between border-t border-foreground/10 text-foreground/40 font-mono text-sm">
+                <div className="mt-16 pt-8 flex flex-col md:flex-row items-center justify-center border-t border-foreground/10 text-foreground/40 font-mono text-sm">
                     <p>© {new Date().getFullYear()} Chapeau Collective. All rights reserved.</p>
-                    <div className="flex gap-8 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
-                    </div>
                 </div>
             </div>
-
-            {/* Massive subtle background text to anchor the page */}
-            <h1 className="absolute -bottom-8 md:-bottom-16 left-1/2 -translate-x-1/2 font-display font-black text-[12vw] leading-none text-foreground/[0.03] whitespace-nowrap pointer-events-none select-none uppercase">
-                Chapeau Collective
-            </h1>
         </footer>
     );
 };
