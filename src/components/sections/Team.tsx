@@ -16,7 +16,7 @@ const team = [
         role: "Sales and Revenue Lead",
         bio: "Will sits at the core of our sales engine with a skillset that spans leadership, methodology, coaching and execution. With a wide-ranging career delivering sales consultancy, leadership and best practice to businesses of all stages and sizes, Will currently supports businesses across the UK as part of the hugely successful Sales Geek franchise.\n\nWill brings particular, extensive experience in driving  B2B sales performance, aligning high-performance sales process design with coaching discipline to build predictable, repeatable revenue generation systems.",
         skills: ["Sales Leadership", "Executive Coaching", "Change Management"],
-        image: "/images/willsinclair.jpeg"
+        image: "/images/willam.jpeg"
     },
     {
         name: "Vandan Mandloi",
