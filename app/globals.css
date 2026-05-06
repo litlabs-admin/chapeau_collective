@@ -129,6 +129,26 @@
     letter-spacing: -0.06em;
   }
 
+  .ad-logo-marquee {
+    animation: ad-logo-marquee 18s linear infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ad-logo-marquee {
+      animation: none;
+    }
+  }
+
+  @keyframes ad-logo-marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-400px - 160px));
+    }
+  }
+
   @media (min-width: 810px) and (max-width: 1199px) {
     .team-slide {
       flex-basis: 100%;

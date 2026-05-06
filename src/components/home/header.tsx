@@ -2,17 +2,19 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import type { NavItem } from "@/content/site";
 import { homePageContent } from "@/content/site";
 import { SmartLink } from "./shared";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const navItems = homePageContent.nav as readonly NavItem[];
 
   return (
     <header className="fixed inset-x-0 top-0 z-[1000] bg-white">
       <nav className="flex w-full items-center justify-between px-4 py-[10px] tablet:px-10 desktop:px-10">
         <SmartLink
-          className="relative flex h-[24px] w-[100px] shrink-0 items-center"
+          className="relative flex h-[36px] w-[150px] shrink-0 items-center"
           href="#hero-section"
         >
           <img
@@ -23,7 +25,7 @@ export function Header() {
         </SmartLink>
 
         <div className="hidden min-w-0 flex-[1_0_0] items-center justify-evenly tablet:flex desktop:flex">
-          {homePageContent.nav.map((item) => (
+          {navItems.map((item) => (
             <SmartLink
               key={item.label}
               className="group inline-flex h-[33px] items-center justify-center text-[14px] font-medium leading-[1.4] tracking-normal text-ink-soft transition-colors hover:text-accent-dark font-display"
@@ -47,7 +49,7 @@ export function Header() {
               "inset 0 4px 4px 0 rgba(255,255,255,0.2), inset 4px 0 4px 0 rgba(255,255,255,0.2), inset 0 -4px 4px 0 rgba(255,255,255,0.2), inset -4px 0 4px 0 rgba(255,255,255,0.2)"
           }}
         >
-          Get a Quote
+          Let's Talk
         </SmartLink>
 
         <button
@@ -82,7 +84,7 @@ export function Header() {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="flex flex-col gap-6 px-4 pb-6 pt-2">
-              {homePageContent.nav.map((item) => (
+              {navItems.map((item) => (
                 <SmartLink
                   key={item.label}
                   className="flex items-center gap-[2px] text-[14px] font-medium leading-[1.4] text-ink-soft font-display"
@@ -106,7 +108,7 @@ export function Header() {
                     "inset 0 4px 4px 0 rgba(255,255,255,0.2), inset 4px 0 4px 0 rgba(255,255,255,0.2), inset 0 -4px 4px 0 rgba(255,255,255,0.2), inset -4px 0 4px 0 rgba(255,255,255,0.2)"
                 }}
               >
-                Get a Quote
+                Let's Talk
               </SmartLink>
             </div>
           </motion.div>

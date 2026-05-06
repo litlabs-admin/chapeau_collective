@@ -10,11 +10,11 @@ const cardClass =
   "relative flex w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-[8px] bg-accent-dark px-4 py-6 tablet:w-[328px] desktop:w-[328px]";
 
 // All three cards loop their illustration animation continuously.
-const LOOP_DURATION = 3;
+const LOOP_DURATION = 4.2;
 const LOOP_TRANSITION = {
   duration: LOOP_DURATION,
   repeat: Infinity,
-  ease: "easeInOut" as const,
+  ease: [0.45, 0, 0.55, 1] as const,
   times: [0, 0.5, 1]
 };
 
@@ -148,8 +148,8 @@ function AdsArt() {
 
           {/* Frame 8483 — YouTube tile: loops left 0 → 14 → 0 */}
           <motion.span
-            animate={{ left: [0, 14, 0] }}
-            className="absolute flex h-7 w-[29px] items-center justify-center rounded bg-white"
+            animate={{ x: [0, 14, 0] }}
+            className="absolute left-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
             style={{ top: "calc(47.8528% - 14px)" }}
             transition={LOOP_TRANSITION}
           >
@@ -158,8 +158,8 @@ function AdsArt() {
 
           {/* Frame 8482 — Meta tile: loops right 0 → 12 → 0 */}
           <motion.span
-            animate={{ right: [0, 12, 0] }}
-            className="absolute flex h-7 w-[29px] items-center justify-center rounded bg-white"
+            animate={{ x: [0, -12, 0] }}
+            className="absolute right-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
             style={{ top: "calc(47.8528% - 14px)" }}
             transition={LOOP_TRANSITION}
           >
@@ -168,8 +168,8 @@ function AdsArt() {
 
           {/* Frame 8479 — GoogleAds tile: loops top 0→18→0, left 14→24→14 */}
           <motion.span
-            animate={{ top: [0, 18, 0], left: [14, 24, 14] }}
-            className="absolute flex h-7 w-[29px] items-center justify-center rounded bg-white"
+            animate={{ x: [0, 10, 0], y: [0, 18, 0] }}
+            className="absolute left-[14px] top-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
             transition={LOOP_TRANSITION}
           >
             <GoogleAdsIcon />
@@ -177,8 +177,8 @@ function AdsArt() {
 
           {/* Frame 8480 — Facebook tile: loops top 0→11→0 */}
           <motion.span
-            animate={{ top: [0, 11, 0] }}
-            className="absolute flex h-7 w-[29px] items-center justify-center rounded bg-white"
+            animate={{ y: [0, 11, 0] }}
+            className="absolute top-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
             style={{ left: "calc(49.7436% - 14.5px)" }}
             transition={LOOP_TRANSITION}
           >
@@ -187,8 +187,8 @@ function AdsArt() {
 
           {/* Frame 8481 — Instagram tile: loops top 0→18→0, right 14→21→14 */}
           <motion.span
-            animate={{ top: [0, 18, 0], right: [14, 21, 14] }}
-            className="absolute flex h-7 w-[29px] items-center justify-center rounded bg-white"
+            animate={{ x: [0, -7, 0], y: [0, 18, 0] }}
+            className="absolute right-[14px] top-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
             transition={LOOP_TRANSITION}
           >
             <InstagramIcon />

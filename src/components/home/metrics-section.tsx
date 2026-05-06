@@ -29,26 +29,26 @@ export function MetricsSection() {
                 {homePageContent.metrics.map((metric) => (
                   <article
                     key={metric.label}
-                    className="flex h-[250px] flex-1 flex-col rounded-[16px] bg-mist p-4"
+                    className="grid h-[250px] flex-1 grid-rows-[32px_98px_88px] items-start rounded-[16px] bg-mist p-4"
                   >
-                    <div className="flex flex-1 flex-col justify-between">
-                      <p
-                        className="font-display text-[32px] font-medium text-ink"
-                        style={{
-                          lineHeight: "0.8em",
-                          letterSpacing: "-0.05em",
-                          fontFeatureSettings: "'zero' on, 'tnum' on"
-                        }}
-                      >
-                        <MetricCounter suffix={metric.suffix} value={metric.value} />
-                      </p>
+                    <p
+                      className="font-display text-[32px] font-medium text-ink"
+                      style={{
+                        lineHeight: "0.8em",
+                        letterSpacing: "-0.05em",
+                        fontFeatureSettings: "'zero' on, 'tnum' on"
+                      }}
+                    >
+                      <MetricCounter suffix={metric.suffix} value={metric.value} />
+                    </p>
+                    <div className="row-start-3 flex h-full w-full flex-col items-start gap-[4px] overflow-hidden">
                       <p className="font-instrument text-[16px] font-medium leading-[1.4] text-ink desktop:text-[19.2px]">
                         {metric.label}
                       </p>
+                      <p className="font-display text-[14px] font-medium leading-[1.2] text-ink">
+                        {metric.detail}
+                      </p>
                     </div>
-                    <p className="font-display text-[14px] font-medium leading-[1.2] text-ink">
-                      {metric.detail}
-                    </p>
                   </article>
                 ))}
               </div>

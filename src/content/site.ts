@@ -40,6 +40,7 @@ export type TeamMember = {
   role: string;
   bio: string;
   image: string;
+  objectPosition?: string;
 };
 
 export type BlogPreview = {
@@ -66,10 +67,10 @@ export const homePageContent = {
   },
   logo: image("0ZWCD0kHI3h3NMtvp5SRfGeq3k.svg"),
   nav: [
-    { label: "Services", href: "#services-section", count: "(3)" },
+    { label: "Services", href: "#services-section" },
     { label: "Results", href: "#results-section" },
     { label: "Process", href: "#process-section" },
-    { label: "Blog", href: "/blog-collection", count: "(4)" }
+    { label: "Insights", href: "#blog-section" }
   ] satisfies NavItem[],
   hero: {
     sectionId: "hero-section",
@@ -78,7 +79,7 @@ export const homePageContent = {
       "From demand creation to closed deals, every move is engineered for growth. We operate at the intersection of marketing, sales and AI to build revenue engines that compound over time.",
     sideLabel: "Breakthrough growth built on  insight.",
     primaryCta: {
-      label: "Get a Quote",
+      label: "Let's Talk",
       href: "#book-a-call-section"
     },
     secondaryCta: {
@@ -230,21 +231,24 @@ export const homePageContent = {
         role: "Marketing & Strategy Lead",
         bio:
           "Gordon is a marketing specialist with nearly 20 years of experience across SaaS, financial services, management consultancy and more. He learns new markets fast and focuses energy where it counts. As founder of GR23 Marketing and a veteran of organisations like Concentrix and Ageas, Gordon brings practical strategy, clear messaging and genuine commercial momentum to the Collective.",
-        image: image("gordon.png")
+        image: image("gordon.png"),
+        objectPosition: "center"
       },
       {
         name: "Will Sinclair",
         role: "Sales & Revenue Lead",
         bio:
           "Will brings a career-long depth of expertise in B2B sales performance spanning leadership, methodology, coaching and execution. As part of the highly regarded Sales Geek franchise, Will helps businesses build predictable, repeatable revenue generation systems. He aligns high-performance process design with coaching discipline to turn pipeline into profit.",
-        image: image("willsinclair.jpeg")
+        image: image("willsinclair.jpeg"),
+        objectPosition: "center"
       },
       {
         name: "Vandan Mandloi",
         role: "AI & Digital Operations Lead",
         bio:
           "Vandan has spent almost a decade delivering digital-led strategies and campaigns for large-scale corporate enterprises through his agency LitLabs. He brings a scale-up mindset to everything he works on delivering practical AI workflows, automation agents and multichannel digital advertising that give businesses a genuine operational edge.",
-        image: image("vandan.jpeg")
+        image: image("vandan.jpeg"),
+        objectPosition: "center"
       }
     ] satisfies TeamMember[]
   },
