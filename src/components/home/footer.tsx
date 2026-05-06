@@ -83,7 +83,7 @@ function FooterWordmark() {
     <img
       alt="Chapeau Collective"
       className="h-auto w-full"
-      src="/chapeau-collective-logo.svg"
+      src="/chapeau logo.png"
     />
   );
 }

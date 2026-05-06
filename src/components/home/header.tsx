@@ -20,7 +20,7 @@ export function Header() {
           <img
             alt="Chapeau Collective"
             className="h-full w-full object-contain object-left"
-            src="/chapeau-collective-logo.svg"
+            src="/chapeau logo.png"
           />
         </SmartLink>
 
