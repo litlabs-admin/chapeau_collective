@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { forwardFormSubmission, newsletterFormSchema } from "@/lib/forms";
+import { createAirtableRecord, newsletterFormSchema } from "@/lib/forms";
 
 export async function POST(request: Request) {
   const payload = await request.json().catch(() => null);
@@ -22,9 +22,9 @@ export async function POST(request: Request) {
   }
 
   try {
-    await forwardFormSubmission(process.env.NEWSLETTER_FORM_WEBHOOK_URL, {
-      ...submission,
-      submittedAt: new Date().toISOString()
+    await createAirtableRecord(process.env.AIRTABLE_NEWSLETTER_TABLE_NAME, {
+      Email: submission.email,
+      "Source Path": submission.sourcePath
     });
 
     return NextResponse.json({ message: "Thanks for signing up." });

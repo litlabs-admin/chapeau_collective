@@ -72,13 +72,13 @@ export function TeamSection() {
                   className="w-full shrink-0 snap-center snap-always tablet:w-full desktop:w-[calc(33.333333333333336%_-_10.666666666666666px)]"
                   key={member.name}
                 >
-                  <article className="grid w-full grid-rows-[300px_auto_auto_auto] items-start gap-4 overflow-visible">
-                    <div className="relative h-[300px] w-full overflow-hidden rounded-lg">
+                  <article className="grid w-full grid-rows-[auto_auto_auto_auto] items-start gap-4 overflow-visible">
+                    <div className="relative aspect-square w-full overflow-hidden rounded-lg">
                       <Image
                         alt="Profile image"
                         className="grayscale"
                         fill
-                        sizes="(min-width: 1200px) 323px, (min-width: 810px) 710px, 358px"
+                        sizes="(min-width: 992px) 323px, (min-width: 768px) 710px, 358px"
                         src={member.image}
                         style={{
                           objectFit: "fill",

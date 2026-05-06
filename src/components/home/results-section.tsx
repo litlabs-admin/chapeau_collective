@@ -5,42 +5,9 @@ import { homePageContent } from "@/content/site";
 
 const logos = homePageContent.resultsSection.logos;
 
-const resultCards = [
-  {
-    title: "Social campaign reach tripled in 60 days through targeted content strategy.",
-    quote:
-      "“Chapeau understood our audience better than we did. They built a campaign that actually spoke to people and the numbers proved it.”",
-    person: "Head of Brand, Kinetic Energy",
-    company: "Social Campaign // 2026",
-    avatar: "/mirror/framerusercontent.com/images/Yq2wR8CzuhrxMbUSrMbDfjyqNUI.png",
-    mediaType: "image",
-    mediaSrc: "/mirror/framerusercontent.com/images/vhed91qNDLdo7iAAg3JYKzReDw.png"
-
-  },
-  {
-    title: "Full product launch delivered on time, on budget and ahead of forecast.",
-    quote:
-      "“We finally had a team that connected what we were saying to what we were selling. Revenue followed.”",
-    person: "Founder, Aura Skincare",
-    company: "Product Launch // 2025",
-    avatar: "/mirror/framerusercontent.com/images/UsjM5dNQFS48rybKhkboL6UNsAU.png",
-    mediaType: "video",
-    mediaSrc: "/mirror/videos.pexels.com/video-files/9032179/9032179-uhd_1440_2560_25fps.mp4"
-  },
-  {
-    title: "OOH campaign delivered measurable uplift in brand consideration and inbound enquiries.",
-    quote:
-      "“The Collective brought creative thinking and commercial rigour in equal measure. Exactly what a campaign like this needed.”",
-    person: "Marketing Director, Nexus Outdoor",
-    company: "OOH Advertising // 2025",
-    avatar: "/mirror/framerusercontent.com/images/Q0zl5EElUAelNJYUjLflyYGKSc.png",
-    mediaType: "image",
-    mediaSrc: "/mirror/framerusercontent.com/images/MTDu9FPckKypK1RJ7H4T9paX4Ic.png"
-  }
-] as const;
-
 export function ResultsSection() {
   const section = homePageContent.resultsSection;
+  const resultCards = section.cards;
   const marqueeLogos = [...logos, ...logos, ...logos];
 
   return (
@@ -128,7 +95,7 @@ export function ResultsSection() {
                     alt=""
                     className="object-cover"
                     fill
-                    sizes="(min-width: 1200px) 389px, (min-width: 810px) 226px, 358px"
+                    sizes="(min-width: 992px) 389px, (min-width: 768px) 226px, 358px"
                     src={card.mediaSrc}
                   />
                 )}

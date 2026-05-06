@@ -9,18 +9,19 @@ import { SmartLink } from "./shared";
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = homePageContent.nav as readonly NavItem[];
+  const homeHash = (href: string) => (href.startsWith("#") ? `/${href}` : href);
 
   return (
     <header className="fixed inset-x-0 top-0 z-[1000] bg-white">
       <nav className="flex w-full items-center justify-between px-4 py-[10px] tablet:px-10 desktop:px-10">
         <SmartLink
           className="relative flex h-[36px] w-[150px] shrink-0 items-center"
-          href="#hero-section"
+          href="/#hero-section"
         >
           <img
             alt="Chapeau Collective"
             className="h-full w-full object-contain object-left"
-            src="/chapeau logo.png"
+            src="/chapeau-collective-logo.png"
           />
         </SmartLink>
 
@@ -29,7 +30,7 @@ export function Header() {
             <SmartLink
               key={item.label}
               className="group inline-flex h-[33px] items-center justify-center text-[14px] font-medium leading-[1.4] tracking-normal text-ink-soft transition-colors hover:text-accent-dark font-display"
-              href={item.href}
+              href={homeHash(item.href)}
             >
               <span>{item.label}</span>
               {item.count ? (
@@ -43,7 +44,7 @@ export function Header() {
 
         <SmartLink
           className="hidden items-center justify-center gap-2 rounded-full bg-accent px-4 py-2 text-[14px] font-medium leading-[1.4] text-white tablet:inline-flex desktop:inline-flex"
-          href="#book-a-call-section"
+          href="/#book-a-call-section"
           style={{
             boxShadow:
               "inset 0 4px 4px 0 rgba(255,255,255,0.2), inset 4px 0 4px 0 rgba(255,255,255,0.2), inset 0 -4px 4px 0 rgba(255,255,255,0.2), inset -4px 0 4px 0 rgba(255,255,255,0.2)"
@@ -88,7 +89,7 @@ export function Header() {
                 <SmartLink
                   key={item.label}
                   className="flex items-center gap-[2px] text-[14px] font-medium leading-[1.4] text-ink-soft font-display"
-                  href={item.href}
+                  href={homeHash(item.href)}
                   onClick={() => setIsOpen(false)}
                 >
                   <span>{item.label}</span>
@@ -101,7 +102,7 @@ export function Header() {
               ))}
               <SmartLink
                 className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-accent px-4 py-2 text-[14px] font-medium leading-[1.4] text-white"
-                href="#book-a-call-section"
+                href="/#book-a-call-section"
                 onClick={() => setIsOpen(false)}
                 style={{
                   boxShadow:

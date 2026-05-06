@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { forwardFormSubmission, quoteFormSchema } from "@/lib/forms";
+import { createAirtableRecord, quoteFormSchema } from "@/lib/forms";
 
 export async function POST(request: Request) {
   const payload = await request.json().catch(() => null);
@@ -22,9 +22,13 @@ export async function POST(request: Request) {
   }
 
   try {
-    await forwardFormSubmission(process.env.QUOTE_FORM_WEBHOOK_URL, {
-      ...submission,
-      submittedAt: new Date().toISOString()
+    await createAirtableRecord(process.env.AIRTABLE_QUOTE_TABLE_NAME, {
+      Name: submission.name,
+      Email: submission.email,
+      Company: submission.company,
+      "Revenue Range": submission.monthlyRevenueRange,
+      Brief: submission.brief,
+      "Source Path": submission.sourcePath
     });
 
     return NextResponse.json({ message: "We'll reach out shortly." });

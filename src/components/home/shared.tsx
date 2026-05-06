@@ -76,7 +76,7 @@ export function Reveal({
   );
 }
 
-const FRAMER_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const EASE_OUT_EXPO: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export function AnimatedHeadline({
   text,
@@ -107,7 +107,7 @@ export function AnimatedHeadline({
               transition={{
                 duration: 0.55,
                 delay: wordIndex * 0.06,
-                ease: FRAMER_EASE
+                ease: EASE_OUT_EXPO
               }}
             >
               {word}
@@ -169,7 +169,7 @@ export function AnimatedWords({
             transition={{
               duration: 0.55,
               delay: delayBase + i * staggerPerWord,
-              ease: FRAMER_EASE
+              ease: EASE_OUT_EXPO
             }}
           >
             {word}
@@ -227,7 +227,7 @@ export function AnimatedChars({
                   transition={{
                     duration: 0.5,
                     delay: delayBase + idx * staggerPerChar,
-                    ease: FRAMER_EASE
+                    ease: EASE_OUT_EXPO
                   }}
                 >
                   {ch}

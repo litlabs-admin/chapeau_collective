@@ -7,8 +7,13 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      tablet: { min: "810px", max: "1199px" },
-      desktop: { min: "1200px" }
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      tablet: { min: "768px", max: "991px" },
+      desktop: { min: "992px" }
     },
     extend: {
       colors: {
@@ -17,9 +22,10 @@ const config: Config = {
         "ink-soft": "rgba(18, 18, 18, 0.8)",
         line: "#bababa40",
         mist: "#f7f7f7",
-        accent: "#2cd4e6",
-        "accent-dark": "#2cd4e6",
-        "accent-soft": "#e8fbfd"
+        accent: "#0F6F78",
+        "accent-dark": "#0B4F5C",
+        "accent-soft": "#E7F4F5",
+        "accent-secondary": "#FF5A1F"
       },
       borderRadius: {
         pill: "999px",
@@ -37,7 +43,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-fade":
-          "linear-gradient(140deg, rgba(44,212,230,0.92) 0%, rgba(44,212,230,0.72) 38%, rgba(17,17,17,0.32) 100%)"
+          "linear-gradient(140deg, rgba(15,111,120,0.92) 0%, rgba(15,111,120,0.72) 38%, rgba(17,17,17,0.32) 100%)"
       }
     }
   },

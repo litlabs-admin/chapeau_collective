@@ -5,7 +5,6 @@ import { homePageContent } from "@/content/site";
 import {
   AnimatedChars,
   AnimatedHeadline,
-  AnimatedWords,
   SmartLink
 } from "./shared";
 
@@ -65,28 +64,6 @@ export function HeroSection() {
                 </svg>
               </span>
             </SmartLink>
-          </div>
-
-          <div className="hidden w-min flex-col items-start gap-[16px] self-stretch desktop:flex tablet:flex">
-            <AnimatedWords
-              as="h6"
-              className="font-display text-[16px] font-medium uppercase leading-[1.4] tracking-[-0.02em] text-white"
-              text={hero.sideLabel}
-            />
-            <div className="overflow-hidden rounded-[8px]" style={{ width: 200, height: 113 }}>
-              <video
-                autoPlay
-                className="block h-full w-full object-cover"
-                loop
-                muted
-                playsInline
-                poster={hero.videoPoster}
-                preload="none"
-                style={{ borderRadius: 8, backgroundColor: "rgba(0,0,0,0)" }}
-              >
-                <source src={hero.videoSrc} type="video/mp4" />
-              </video>
-            </div>
           </div>
         </div>
 

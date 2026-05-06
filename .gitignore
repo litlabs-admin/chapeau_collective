@@ -33,16 +33,3 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Audit / scratch files
-audit-extract.js
-audit-output.txt
-audit-output2.txt
-audit-output3.txt
-framer-styles.css
-presets.css
-presets.txt
-searchIndex-live.json
-404-live.html
-blog-q4-live.html
-blog-retention-live.html
-

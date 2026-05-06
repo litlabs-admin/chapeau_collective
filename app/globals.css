@@ -35,7 +35,7 @@
   }
 
   ::selection {
-    background: rgba(44, 212, 230, 0.18);
+    background: rgba(15, 111, 120, 0.18);
     color: #111111;
   }
 }
@@ -54,7 +54,7 @@
   }
 
   .section-eyebrow {
-    @apply font-display text-[16px] font-medium uppercase leading-[1.4] tracking-[-.02em] text-accent;
+    @apply font-display text-[20px] font-medium uppercase leading-[1.4] tracking-[-.02em] text-accent desktop:text-[22px];
   }
 
   .section-title {
@@ -105,48 +105,48 @@
 @layer utilities {
   .bg-accent,
   .bg-accent-dark {
-    background-color: #2cd4e6 !important;
+    background-color: #0F6F78 !important;
   }
 
   .text-accent,
   .text-accent-dark {
-    color: #2cd4e6 !important;
+    color: #0F6F78 !important;
   }
 
   .border-accent,
   .border-accent-dark {
-    border-color: #2cd4e6 !important;
+    border-color: #0F6F78 !important;
   }
 
   .hover\:bg-accent:hover {
-    background-color: #2cd4e6 !important;
+    background-color: #0F6F78 !important;
   }
 
   .hover\:bg-accent-dark:hover {
-    background-color: #2cd4e6 !important;
+    background-color: #0B4F5C !important;
   }
 
   .hover\:border-accent:hover,
   .hover\:border-accent-dark:hover {
-    border-color: #2cd4e6 !important;
+    border-color: #0F6F78 !important;
   }
 
   .hover\:text-accent-dark:hover {
-    color: #2cd4e6 !important;
+    color: #0B4F5C !important;
   }
 
   .hover\:text-accent:hover {
-    color: #2cd4e6 !important;
+    color: #0F6F78 !important;
   }
 
   .focus\:border-accent-dark:focus,
   .focus\:border-accent:focus {
-    border-color: #2cd4e6 !important;
+    border-color: #0F6F78 !important;
   }
 
   .focus\:ring-accent:focus,
   .focus\:ring-accent-dark:focus {
-    --tw-ring-color: #2cd4e6 !important;
+    --tw-ring-color: #0F6F78 !important;
   }
 
   .text-balance {
@@ -195,13 +195,13 @@
     }
   }
 
-  @media (min-width: 810px) and (max-width: 1199px) {
+  @media (min-width: 768px) and (max-width: 991px) {
     .team-slide {
       flex-basis: 100%;
     }
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 992px) {
     .team-slide {
       flex-basis: calc(33.3333% - 10.6667px);
     }

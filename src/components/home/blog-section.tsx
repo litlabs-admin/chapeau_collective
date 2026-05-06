@@ -30,7 +30,7 @@ export function BlogSection() {
                       alt={post.title}
                       className="object-cover transition duration-500 group-hover:scale-[1.03]"
                       fill
-                      sizes="(min-width: 1200px) 592px, (min-width: 810px) 50vw, 100vw"
+                      sizes="(min-width: 992px) 592px, (min-width: 768px) 50vw, 100vw"
                       src={post.image}
                     />
                   </div>

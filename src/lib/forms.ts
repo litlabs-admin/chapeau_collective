@@ -19,37 +19,53 @@ export const newsletterFormSchema = z.object({
   sourcePath: z.string().trim().optional().default("/")
 });
 
-const buildHeaders = () => {
-  const headers: HeadersInit = {
-    "Content-Type": "application/json"
-  };
+type AirtableFields = Record<string, string>;
 
-  if (process.env.FORM_WEBHOOK_AUTH_HEADER && process.env.FORM_WEBHOOK_AUTH_TOKEN) {
-    headers[process.env.FORM_WEBHOOK_AUTH_HEADER] =
-      process.env.FORM_WEBHOOK_AUTH_TOKEN;
+const airtableApiUrl = "https://api.airtable.com/v0";
+
+function getAirtableConfig(tableName: string | undefined) {
+  const token = process.env.AIRTABLE_ACCESS_TOKEN;
+  const baseId = process.env.AIRTABLE_BASE_ID;
+
+  if (!token) {
+    throw new Error("Missing AIRTABLE_ACCESS_TOKEN.");
   }
 
-  return headers;
-};
+  if (!baseId) {
+    throw new Error("Missing AIRTABLE_BASE_ID.");
+  }
 
-export async function forwardFormSubmission(
-  webhookUrl: string | undefined,
-  payload: Record<string, string>
+  if (!tableName) {
+    throw new Error("Missing Airtable table name.");
+  }
+
+  return { baseId, tableName, token };
+}
+
+export async function createAirtableRecord(
+  tableName: string | undefined,
+  fields: AirtableFields
 ) {
-  if (!webhookUrl) {
-    throw new Error("Missing webhook URL.");
-  }
+  const { baseId, tableName: configuredTableName, token } =
+    getAirtableConfig(tableName);
+  const url = `${airtableApiUrl}/${baseId}/${encodeURIComponent(configuredTableName)}`;
 
-  const response = await fetch(webhookUrl, {
+  const response = await fetch(url, {
     method: "POST",
-    headers: buildHeaders(),
-    body: JSON.stringify(payload),
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ fields }),
     cache: "no-store"
   });
 
   if (!response.ok) {
-    throw new Error(`Webhook failed with status ${response.status}.`);
+    const errorBody = await response.text().catch(() => "");
+    throw new Error(
+      `Airtable request failed with status ${response.status}: ${errorBody}`
+    );
   }
 
-  return response;
+  return response.json() as Promise<{ id: string }>;
 }
