@@ -35,7 +35,7 @@
   }
 
   ::selection {
-    background: rgba(66, 161, 116, 0.18);
+    background: rgba(44, 212, 230, 0.18);
     color: #111111;
   }
 }
@@ -54,7 +54,7 @@
   }
 
   .section-eyebrow {
-    @apply font-display text-[16px] font-medium uppercase leading-[1.4] tracking-[-.02em] text-[#133F40];
+    @apply font-display text-[16px] font-medium uppercase leading-[1.4] tracking-[-.02em] text-accent;
   }
 
   .section-title {
@@ -103,6 +103,52 @@
 }
 
 @layer utilities {
+  .bg-accent,
+  .bg-accent-dark {
+    background-color: #2cd4e6 !important;
+  }
+
+  .text-accent,
+  .text-accent-dark {
+    color: #2cd4e6 !important;
+  }
+
+  .border-accent,
+  .border-accent-dark {
+    border-color: #2cd4e6 !important;
+  }
+
+  .hover\:bg-accent:hover {
+    background-color: #2cd4e6 !important;
+  }
+
+  .hover\:bg-accent-dark:hover {
+    background-color: #2cd4e6 !important;
+  }
+
+  .hover\:border-accent:hover,
+  .hover\:border-accent-dark:hover {
+    border-color: #2cd4e6 !important;
+  }
+
+  .hover\:text-accent-dark:hover {
+    color: #2cd4e6 !important;
+  }
+
+  .hover\:text-accent:hover {
+    color: #2cd4e6 !important;
+  }
+
+  .focus\:border-accent-dark:focus,
+  .focus\:border-accent:focus {
+    border-color: #2cd4e6 !important;
+  }
+
+  .focus\:ring-accent:focus,
+  .focus\:ring-accent-dark:focus {
+    --tw-ring-color: #2cd4e6 !important;
+  }
+
   .text-balance {
     text-wrap: balance;
   }

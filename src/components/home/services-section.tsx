@@ -24,7 +24,7 @@ export function ServicesSection() {
           >
             {/* Eyebrow — framer-otmrws */}
             <Reveal className="w-full" delay={index * 0.04}>
-              <h6 className="font-display text-base font-medium uppercase leading-[1.4] tracking-[-.02em] text-[#133F40]">
+              <h6 className="font-display text-base font-medium uppercase leading-[1.4] tracking-[-.02em] text-accent">
                 {service.tag}
               </h6>
             </Reveal>

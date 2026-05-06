@@ -76,11 +76,14 @@ export function TeamSection() {
                     <div className="relative h-[300px] w-full overflow-hidden rounded-lg">
                       <Image
                         alt="Profile image"
-                        className="object-cover"
+                        className="grayscale"
                         fill
                         sizes="(min-width: 1200px) 323px, (min-width: 810px) 710px, 358px"
                         src={member.image}
-                        style={{ objectPosition: member.objectPosition ?? "center" }}
+                        style={{
+                          objectFit: "fill",
+                          objectPosition: member.objectPosition ?? "center"
+                        }}
                       />
                     </div>
 

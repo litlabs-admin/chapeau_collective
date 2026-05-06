@@ -115,14 +115,14 @@ export function Footer() {
         </Reveal>
       </div>
 
-      <div className="flex w-full max-w-[358px] flex-col items-start justify-start gap-[10px] tablet:max-w-[710px] tablet:flex-row tablet:items-center tablet:justify-start desktop:max-w-[1800px]">
-        <div className="order-1 flex w-full items-center justify-start gap-[10px] overflow-hidden tablet:order-none tablet:w-px tablet:flex-1">
+      <div className="flex w-full max-w-[358px] flex-row items-center justify-between gap-[10px] tablet:max-w-[710px] desktop:max-w-[1800px]">
+        <div className="flex w-px flex-1 items-center justify-start gap-[10px] overflow-hidden">
           <p className="font-display text-[14px] font-medium leading-[1.4] text-ink">
             {footer.copyright}
           </p>
         </div>
 
-        <div className="order-0 flex h-min w-min items-center justify-center gap-[10px] overflow-hidden tablet:order-none">
+        <div className="flex h-min w-min shrink-0 items-center justify-center gap-[10px] overflow-hidden">
           {footer.socials.map((social) => (
             <SocialLink key={social.label} social={social} />
           ))}

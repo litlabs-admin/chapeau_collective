@@ -17,18 +17,18 @@ const config: Config = {
         "ink-soft": "rgba(18, 18, 18, 0.8)",
         line: "#bababa40",
         mist: "#f7f7f7",
-        accent: "#42A174",
-        "accent-dark": "#133F40",
-        "accent-soft": "#E9F4EE"
+        accent: "#2cd4e6",
+        "accent-dark": "#2cd4e6",
+        "accent-soft": "#e8fbfd"
       },
       borderRadius: {
         pill: "999px",
         shell: "20px"
       },
       fontFamily: {
-        body: "var(--font-body)",
-        display: "var(--font-display)",
-        instrument: "var(--font-instrument)"
+        body: "var(--font-aeonik), Inter, Arial, sans-serif",
+        display: "var(--font-aeonik), Inter, Arial, sans-serif",
+        instrument: "var(--font-aeonik), Inter, Arial, sans-serif"
       },
       boxShadow: {
         shell:
@@ -37,7 +37,7 @@ const config: Config = {
       },
       backgroundImage: {
         "hero-fade":
-          "linear-gradient(140deg, rgba(19,63,64,0.92) 0%, rgba(19,63,64,0.72) 38%, rgba(17,17,17,0.32) 100%)"
+          "linear-gradient(140deg, rgba(44,212,230,0.92) 0%, rgba(44,212,230,0.72) 38%, rgba(17,17,17,0.32) 100%)"
       }
     }
   },

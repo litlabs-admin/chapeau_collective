@@ -39,14 +39,14 @@
   <!-- Left Globe Icon -->
   <g>
     <!-- Outer ring of the globe -->
-    <circle cx="60" cy="60" r="33" stroke="#ffffff" stroke-width="3" fill="none" />
+    <circle cx="60" cy="60" r="33" stroke="#2cd4e6" stroke-width="3" fill="none" />
     
     <!-- Crosshairs (Equator & Prime Meridian) -->
-    <line x1="27" y1="60" x2="93" y2="60" stroke="#ffffff" stroke-width="3" />
-    <line x1="60" y1="27" x2="60" y2="93" stroke="#ffffff" stroke-width="3" />
+    <line x1="27" y1="60" x2="93" y2="60" stroke="#2cd4e6" stroke-width="3" />
+    <line x1="60" y1="27" x2="60" y2="93" stroke="#2cd4e6" stroke-width="3" />
     
     <!-- Curved Meridians -->
-    <ellipse cx="60" cy="60" rx="14" ry="33" stroke="#ffffff" stroke-width="3" fill="none" />
+    <ellipse cx="60" cy="60" rx="14" ry="33" stroke="#2cd4e6" stroke-width="3" fill="none" />
     
     <!-- Center 4-Pointed Sparkle Star -->
     <path d="M 60 48 
@@ -54,10 +54,10 @@
              Q 60 60 60 72 
              Q 60 60 48 60 
              Q 60 60 60 48 Z" 
-          fill="#ffffff" />
+          fill="#2cd4e6" />
   </g>
 
   <!-- Typography -->
-  <text x="135" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="500" fill="#ffffff" letter-spacing="-1.5">Chapeau</text>
-  <text x="135" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="500" fill="#ffffff" letter-spacing="-1.5">Collective</text>
+  <text x="135" y="54" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="500" fill="#2cd4e6" letter-spacing="-1.5">Chapeau</text>
+  <text x="135" y="96" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="500" fill="#2cd4e6" letter-spacing="-1.5">Collective</text>
 </svg>

@@ -17,7 +17,7 @@ const quoteLabelClassName =
   "font-display text-sm font-medium leading-[1.4] tracking-normal text-ink-soft desktop:text-base";
 
 const quoteInputClassName =
-  "h-10 w-full rounded-[10px] border border-[#bababa40] bg-white px-3 [font-family:Inter,var(--font-display)] text-base font-normal leading-[1.2] text-ink outline-none placeholder:text-[#999999] focus:border-accent-dark";
+  "h-10 w-full rounded-[10px] border border-[#bababa40] bg-white px-3 font-display text-base font-normal leading-[1.2] text-ink outline-none placeholder:text-[#999999] focus:border-accent-dark";
 
 const honeypotFieldNames = [
   "website",
@@ -34,7 +34,7 @@ const honeypotFieldNames = [
 ];
 
 const newsletterInputClassName =
-  "h-10 w-full rounded-[10px] border border-[#bababa40] bg-white px-3 [font-family:Inter,var(--font-display)] text-base font-normal leading-[1.2] text-ink outline-none placeholder:text-[#999999] focus:border-[#ff5a19]";
+  "h-10 w-full rounded-[10px] border border-[#bababa40] bg-white px-3 font-display text-base font-normal leading-[1.2] text-ink outline-none placeholder:text-[#999999] focus:border-accent";
 
 const initialStatus = (message: string): FormStatus => ({
   kind: "idle",
@@ -260,7 +260,7 @@ export function NewsletterForm({ footer }: { footer: FooterSection }) {
 
       <button
         aria-label={footer.newsletterSubmitLabel}
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-[#ff5a19] text-white shadow-button disabled:cursor-not-allowed disabled:opacity-60"
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] bg-accent text-white shadow-button disabled:cursor-not-allowed disabled:opacity-60"
         disabled={status.kind === "submitting"}
         type="submit"
       >
