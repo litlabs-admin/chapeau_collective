@@ -72,33 +72,14 @@ export function ResultsSection() {
               className="flex w-full flex-col items-start gap-4 overflow-hidden tablet:w-px tablet:flex-1 desktop:w-px desktop:flex-1"
               key={card.title}
             >
-              <div
-                className={`relative w-full overflow-hidden rounded-lg ${
-                  card.mediaType === "video" ? "h-[400px]" : "h-[300px]"
-                }`}
-              >
-                {card.mediaType === "video" ? (
-                  <video
-                    autoPlay
-                    className="h-full w-full rounded-lg object-cover"
-                    controls
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                    style={{ backgroundColor: "rgb(254, 247, 231)" }}
-                  >
-                    <source src={card.mediaSrc} type="video/mp4" />
-                  </video>
-                ) : (
-                  <Image
-                    alt=""
-                    className="object-cover"
-                    fill
-                    sizes="(min-width: 992px) 389px, (min-width: 768px) 226px, 358px"
-                    src={card.mediaSrc}
-                  />
-                )}
+              <div className="relative h-[300px] w-full overflow-hidden rounded-lg">
+                <Image
+                  alt=""
+                  className="object-cover"
+                  fill
+                  sizes="(min-width: 992px) 389px, (min-width: 768px) 226px, 358px"
+                  src={card.mediaSrc}
+                />
               </div>
 
               <div className="flex w-full flex-col items-center justify-end gap-2">
