@@ -129,7 +129,7 @@ function ArticleParagraph({ text }: { text: string }) {
 
 function ArticleList({ items }: { items: string[] }) {
   return (
-    <ul className="flex w-full list-disc flex-col gap-[22.4px] pl-[1.4em] text-ink desktop:gap-[26.88px]">
+    <ul className="flex w-full list-disc flex-col gap-[22.4px] pl-[1.4em] text-ink marker:text-accent desktop:gap-[26.88px]">
       {items.map((item, index) => (
         <li className={bodyClass} key={`${item}-${index}`}>
           {item}
@@ -224,10 +224,10 @@ export async function BlogArticlePage({ article }: { article: BlogArticle }) {
     <>
       <Header />
       <main className="overflow-x-clip bg-white pt-[60px] tablet:pt-[56px] desktop:pt-[56px]">
-        <section className="flex w-full flex-col items-center gap-10 bg-white px-4 py-[60px] tablet:px-10 tablet:py-20 desktop:py-[100px] desktop:pb-20">
+        <section className="flex w-full flex-col items-center gap-[60px] bg-white px-4 py-[60px] tablet:px-10 tablet:py-20 desktop:px-10 desktop:py-20">
           <div className="mx-auto flex w-full max-w-[358px] flex-col gap-10 tablet:max-w-[700px] desktop:max-w-[1100px]">
-            <div className="flex w-full flex-col items-center gap-6">
-              <h1 className="w-full font-display text-[41.6px] font-medium leading-[1] tracking-[-0.02em] text-ink tablet:text-[64px] tablet:leading-[1.1] desktop:text-[75.2px]">
+            <div className="flex w-full flex-col items-center gap-8">
+              <h1 className="w-full font-display text-[41.6px] font-medium leading-[1] tracking-[-0.02em] text-accent tablet:text-[64px] tablet:leading-[1.1] desktop:text-[75.2px]">
                 {article.title}
               </h1>
               <ArticleMeta article={article} />
@@ -252,9 +252,9 @@ export async function BlogArticlePage({ article }: { article: BlogArticle }) {
           </div>
         </section>
 
-        <section className="flex w-full flex-col items-center bg-white px-4 py-[60px] tablet:px-10 tablet:py-20 desktop:py-20">
-          <div className="mx-auto flex w-full max-w-[358px] flex-col gap-6 tablet:max-w-[710px] tablet:gap-5 desktop:max-w-[1100px] desktop:gap-5">
-            <h2 className="w-full font-display text-[32px] font-medium leading-[1.2] text-ink tablet:text-[34.88px] desktop:text-[48px]">
+        <section className="w-full overflow-hidden bg-white px-4 py-[60px] tablet:px-10 tablet:py-20 desktop:px-10 desktop:py-20">
+          <div className="mx-auto flex w-full max-w-[358px] flex-col gap-10 tablet:max-w-[710px] desktop:max-w-[1100px]">
+            <h2 className="w-full font-display text-[32px] font-medium leading-[1.2] text-accent tablet:text-[34.88px] desktop:text-[48px]">
               More like this
             </h2>
             <div className="grid w-full grid-cols-1 gap-x-4 gap-y-10 tablet:grid-cols-2 desktop:grid-cols-2">

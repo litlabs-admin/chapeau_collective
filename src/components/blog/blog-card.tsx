@@ -16,10 +16,10 @@ export function BlogCard({ article }: { article: BlogArticle }) {
           />
         </div>
         <div className="flex flex-col items-start gap-2">
-          <span className="w-fit rounded-full bg-mist px-2 py-1 font-display text-[14px] font-medium leading-[1.4] text-ink">
+          <span className="w-fit rounded-full bg-mist px-2 py-1 font-display text-[14px] font-medium leading-[1.4] text-accent">
             {article.readTime}
           </span>
-          <h2 className="w-full font-display text-[22.08px] font-medium leading-[1.2] text-black">
+          <h2 className="w-full font-display text-[22.08px] font-medium leading-[1.2] text-black transition-colors group-hover:text-accent">
             {article.title}
           </h2>
         </div>
