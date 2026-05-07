@@ -39,7 +39,7 @@ export function HeroSection() {
               text={hero.copy}
             />
             <SmartLink
-              className="inline-flex items-center justify-center gap-[8px] rounded-full bg-white px-[16px] py-[8px] text-[14px] font-medium leading-[1.4] text-accent font-display"
+              className="inline-flex items-center justify-center gap-[8px] rounded-full bg-white px-[16px] py-[10px] text-[14px] font-medium leading-none text-accent font-display"
               href={hero.secondaryCta.href}
             >
               {hero.secondaryCta.label}

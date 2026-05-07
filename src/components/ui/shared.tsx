@@ -118,7 +118,6 @@ export function AnimatedHeadline({
                       <br />
                     </span>
                     <span className="desktop:hidden">{" "}</span>
-                    <span className="hidden desktop:inline">{" "}</span>
                   </>
                 ) : (
                   " "

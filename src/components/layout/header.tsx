@@ -1,31 +1,50 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import type { NavItem } from "@/content/site";
 import { homePageContent } from "@/content/site";
 import { SmartLink } from "@/components/ui/shared";
 
+const useIsoLayoutEffect =
+  typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
 export function Header() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
+  // Initial state must match SSR (server has no scroll info, assumes top of page).
+  // useLayoutEffect below corrects to actual scroll position before first paint.
   const [pastHero, setPastHero] = useState(!isHome);
   const navItems = homePageContent.nav as readonly NavItem[];
   const homeHash = (href: string) => (href.startsWith("#") ? `/${href}` : href);
 
-  useEffect(() => {
+  useIsoLayoutEffect(() => {
     if (!isHome) {
       setPastHero(true);
       return;
     }
-    const onScroll = () => {
+
+    let frame = 0;
+    const update = () => {
+      frame = 0;
       setPastHero(window.scrollY > window.innerHeight - 100);
     };
-    onScroll();
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(update);
+    };
+
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", update, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", update);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, [isHome]);
 
   const overHero = !pastHero && !isOpen;

@@ -39,6 +39,7 @@ export type TeamMember = {
   bio: string;
   image: string;
   objectPosition?: string;
+  linkedin?: string;
 };
 
 export type Faq = {
@@ -212,7 +213,8 @@ export const homePageContent = {
         bio:
           "Gordon is a marketing specialist with nearly 20 years of experience across SaaS, financial services, management consultancy and more. He learns new markets fast and focuses energy where it counts. As founder of GR23 Marketing and a veteran of organisations like Concentrix and Ageas, Gordon brings practical strategy, clear messaging and genuine commercial momentum to the Collective.",
         image: asset("images/team/gordon-ross.png"),
-        objectPosition: "center"
+        objectPosition: "center",
+        linkedin: "https://www.linkedin.com/in/gordonross1/"
       },
       {
         name: "Will Sinclair",
@@ -220,7 +222,8 @@ export const homePageContent = {
         bio:
           "Will brings a career-long depth of expertise in B2B sales performance spanning leadership, methodology, coaching and execution. As part of the highly regarded Sales Geek franchise, Will helps businesses build predictable, repeatable revenue generation systems. He aligns high-performance process design with coaching discipline to turn pipeline into profit.",
         image: asset("images/team/will-sinclair.jpeg"),
-        objectPosition: "center"
+        objectPosition: "center",
+        linkedin: "https://www.linkedin.com/in/willsinclairsalesgeek/"
       },
       {
         name: "Vandan Mandloi",
@@ -228,6 +231,7 @@ export const homePageContent = {
         bio:
           "Vandan has spent almost a decade delivering digital-led strategies and campaigns for large-scale corporate enterprises through his agency LitLabs. He brings a scale-up mindset to everything he works on delivering practical AI workflows, automation agents and multichannel digital advertising that give businesses a genuine operational edge.",
         image: asset("images/team/vandan-mandloi.jpeg"),
+        linkedin: "https://www.linkedin.com/in/vandan-mandloi/",
         objectPosition: "center"
       }
     ] satisfies TeamMember[]
