@@ -1,12 +1,12 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { homePageContent } from "@/content/site";
+import { getLatestBlogArticles } from "@/lib/blog";
 import { Reveal, SectionIntro } from "@/components/ui/shared";
 
-export function BlogSection() {
+export async function BlogSection() {
   const section = homePageContent.blogSection;
+  const posts = await getLatestBlogArticles(2);
 
   return (
     <section
@@ -21,9 +21,9 @@ export function BlogSection() {
         </SectionIntro>
 
         <div className="grid w-full grid-cols-1 gap-x-4 gap-y-10 tablet:grid-cols-2 desktop:grid-cols-2">
-          {section.previews.map((post, index) => (
-            <Reveal key={post.href} delay={index * 0.06}>
-              <Link className="group block w-full" href={post.href}>
+          {posts.map((post, index) => (
+            <Reveal key={post.slug} delay={index * 0.06}>
+              <Link className="group block w-full" href={`/blog/${post.slug}`}>
                 <article className="flex flex-col gap-4">
                   <div className="relative h-[400px] overflow-hidden rounded-[8px]">
                     <Image

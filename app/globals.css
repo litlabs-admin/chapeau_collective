@@ -119,7 +119,7 @@
     }
 
     to {
-      transform: translateX(calc(-400px - 160px));
+      transform: translateX(calc(-700px - 200px));
     }
   }
 }

@@ -1,5 +1,7 @@
 import { HomePage } from "@/components/home-page";
 
-export default function Page() {
+export const revalidate = 300;
+
+export default async function Page() {
   return <HomePage />;
 }

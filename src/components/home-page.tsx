@@ -10,7 +10,7 @@ import { FaqSection } from "./sections/faq-section";
 import { QuoteSection } from "./layout/quote-section";
 import { Footer } from "./layout/footer";
 
-export function HomePage() {
+export async function HomePage() {
   return (
     <>
       <Header />

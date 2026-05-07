@@ -15,7 +15,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-[1000] bg-white">
       <nav className="flex w-full items-center justify-between px-4 py-[10px] tablet:px-10 desktop:px-10">
         <SmartLink
-          className="relative flex h-[36px] w-[150px] shrink-0 items-center"
+          className="relative flex h-[42px] w-[200px] shrink-0 items-center"
           href="/#hero-section"
         >
           <img
@@ -53,14 +53,12 @@ export function Header() {
         >
           <span className="relative block h-[20px] w-[20px]">
             <span
-              className={`absolute left-0 top-[8px] h-[2px] w-full bg-ink transition-transform duration-300 ${
-                isOpen ? "translate-y-[2px] rotate-45" : ""
-              }`}
+              className={`absolute left-0 top-[8px] h-[2px] w-full bg-ink transition-transform duration-300 ${isOpen ? "translate-y-[2px] rotate-45" : ""
+                }`}
             />
             <span
-              className={`absolute left-0 top-[12px] h-[2px] w-full bg-ink transition-transform duration-300 ${
-                isOpen ? "-translate-y-[2px] -rotate-45" : ""
-              }`}
+              className={`absolute left-0 top-[12px] h-[2px] w-full bg-ink transition-transform duration-300 ${isOpen ? "-translate-y-[2px] -rotate-45" : ""
+                }`}
             />
           </span>
         </button>

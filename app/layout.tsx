@@ -29,7 +29,10 @@ const aeonik = localFont({
 
 export const metadata: Metadata = {
   title: homePageContent.meta.title,
-  description: homePageContent.meta.description
+  description: homePageContent.meta.description,
+  icons: {
+    icon: "/chapeau-collective-favicon.svg"
+  }
 };
 
 export default function RootLayout({

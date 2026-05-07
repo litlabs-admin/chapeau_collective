@@ -28,9 +28,7 @@ export function ResultsSection() {
 
             <div className="flex w-full flex-row items-center justify-center gap-6 overflow-hidden">
               <div className="w-min shrink-0">
-                <h2
-                  className="whitespace-pre font-display text-[12.8px] font-medium leading-none text-ink"
-                >
+                <h2 className="section-eyebrow whitespace-pre">
                   {section.logosHeading}
                 </h2>
               </div>
@@ -49,7 +47,7 @@ export function ResultsSection() {
                     {marqueeLogos.map((logo, index) => (
                       <li
                         aria-hidden={index >= logos.length}
-                        className="relative h-6 w-[100px] shrink-0"
+                        className="relative h-10 w-[140px] shrink-0"
                         key={`${logo}-${index}`}
                       >
                         <img

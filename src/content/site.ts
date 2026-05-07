@@ -41,13 +41,6 @@ export type TeamMember = {
   objectPosition?: string;
 };
 
-export type BlogPreview = {
-  title: string;
-  href: string;
-  image: string;
-  readTime: string;
-};
-
 export type Faq = {
   question: string;
   answer: string;
@@ -60,7 +53,7 @@ export const homePageContent = {
     title: "Chapeau Collective",
     description: "Chapeau Collective"
   },
-  logo: asset("chapeau-collective-logo.png"),
+  logo: asset("chapeau-collective-logo.svg"),
   nav: [
     { label: "Services", href: "#services-section" },
     { label: "Results", href: "#results-section" },
@@ -139,15 +132,18 @@ export const homePageContent = {
     logosHeading: "Clients include",
     logos: [
       asset("images/clients/racam_logo.png"),
-      asset("images/clients/roswell_logo.png")
+      asset("images/clients/roswell_logo.png"),
+      asset("images/clients/kinitic.svg"),
+      asset("images/clients/aura.svg"),
+      asset("images/clients/nexus.svg")
     ],
     cards: [
       {
         title: "Sharper positioning turned a scattered marketing function into a focused growth engine.",
         quote:
           "Chapeau helped us get clear on who we were speaking to, what mattered and where our marketing effort should actually go.",
-        person: "Priya Shah, Managing Director",
-        company: "Northline Advisory",
+        person: "Isla Campbell, Managing Director",
+        company: "Kinitic Advisory",
         avatar: asset("images/testimonials/priya-shah-avatar.png"),
         mediaSrc: asset("images/testimonials/northline-advisory-media.png")
       },
@@ -156,7 +152,7 @@ export const homePageContent = {
         quote:
           "The team brought structure to our pipeline without overcomplicating it. We finally had a repeatable way to turn interest into revenue.",
         person: "Daniel Carter, Commercial Director",
-        company: "SummitBridge Consulting",
+        company: "Aura Consulting",
         avatar: asset("images/testimonials/daniel-carter-avatar.png"),
         mediaSrc: asset("images/testimonials/summitbridge-media.png")
       },
@@ -165,7 +161,7 @@ export const homePageContent = {
         quote:
           "Chapeau made AI feel useful, not abstract. The workflows they built saved time, improved handoffs and gave our team better visibility.",
         person: "Alex Morgan, Operations Lead",
-        company: "Civitas Enterprise Group",
+        company: "Nexus Group",
         avatar: asset("images/testimonials/alex-morgan-avatar.png"),
         mediaSrc: asset("images/testimonials/civitas-enterprise-media.png")
       }
@@ -239,29 +235,9 @@ export const homePageContent = {
     id: "blog-section",
     eyebrow: "Insights",
     intro:
-      "From pipelines to positioning our latest thinking on marketing, sales and AI for growth-focused businesses.",
+      "Working notes from the Collective. Practical thinking on marketing, sales and AI for businesses building predictable revenue.",
     viewAllHref: "/blog",
-    viewAllLabel: "View all Articles",
-    previews: [
-      {
-        title: "Why Marketing and Sales Alignment Is Your Biggest Untapped Revenue Lever",
-        href: "/blog/why-marketing-and-sales-alignment-is-your-biggest-untapped-revenue-lever",
-        image: asset("images/blog/marketing.jpg"),
-        readTime: "4 mins"
-      },
-      {
-        title: "The AI Tools Actually Worth Implementing in a B2B Business Right Now",
-        href: "/blog/the-ai-tools-actually-worth-implementing-in-a-b2b-business-right-now",
-        image: asset("images/blog/ai.jpg"),
-        readTime: "5 mins"
-      },
-      {
-        title: "How to Build a Sales Process That Doesn't Rely on Heroics",
-        href: "/blog/how-to-build-a-sales-process-that-doesnt-rely-on-heroics",
-        image: asset("images/blog/sales.jpg"),
-        readTime: "3 mins"
-      }
-    ] satisfies BlogPreview[]
+    viewAllLabel: "View all Articles"
   },
   faqSection: {
     id: "faq-section",
