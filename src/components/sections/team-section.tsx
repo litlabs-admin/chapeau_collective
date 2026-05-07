@@ -49,7 +49,7 @@ export function TeamSection() {
             <h6 className="section-eyebrow">{eyebrow}</h6>
           </div>
           <div className="flex w-full flex-col items-center justify-center gap-8 overflow-hidden desktop:w-px desktop:flex-1">
-            <h3 className="ad-intro-title w-full">
+            <h3 className="intro-title w-full">
               {intro}
             </h3>
           </div>
@@ -87,7 +87,7 @@ export function TeamSection() {
                       />
                     </div>
 
-                    <h4 className="ad-card-title w-full">{member.name}</h4>
+                    <h4 className="card-title w-full">{member.name}</h4>
                     <p className="w-full font-display text-sm font-medium leading-[1.4] text-accent-dark">
                       {member.role}
                     </p>

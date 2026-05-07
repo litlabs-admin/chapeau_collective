@@ -1,7 +1,7 @@
 import { blogArticles } from "@/content/blog";
-import { Footer } from "@/components/home/footer";
-import { Header } from "@/components/home/header";
-import { QuoteSection } from "@/components/home/quote-section";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { QuoteSection } from "@/components/layout/quote-section";
 import { BlogCard } from "./blog-card";
 
 export function BlogListPage() {

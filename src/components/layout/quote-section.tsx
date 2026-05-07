@@ -2,7 +2,7 @@
 
 import { homePageContent } from "@/content/site";
 import { QuoteForm } from "../forms";
-import { Reveal } from "./shared";
+import { Reveal } from "@/components/ui/shared";
 
 export function QuoteSection() {
   const section = homePageContent.quoteSection;
@@ -22,7 +22,7 @@ export function QuoteSection() {
 
           <div className="flex w-full flex-col items-center gap-10 desktop:w-px desktop:flex-1">
             <Reveal className="w-full">
-              <h3 className="ad-intro-title">
+              <h3 className="intro-title">
                 {section.title}
               </h3>
             </Reveal>

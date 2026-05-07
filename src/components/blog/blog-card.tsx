@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { BlogArticle } from "@/content/blog";
-import { SmartLink } from "@/components/home/shared";
+import { SmartLink } from "@/components/ui/shared";
 
 export function BlogCard({ article }: { article: BlogArticle }) {
   return (
@@ -26,7 +26,7 @@ export function BlogCard({ article }: { article: BlogArticle }) {
             </p>
           </div>
 
-          <h2 className="ad-card-title transition-colors duration-300 group-hover:text-accent">
+          <h2 className="card-title transition-colors duration-300 group-hover:text-accent">
             {article.title}
           </h2>
         </div>

@@ -8,7 +8,6 @@ type ServiceArtKind = "ads" | "creative" | "conversion";
 const cardClass =
   "relative flex w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-[8px] bg-accent-dark px-4 py-6 tablet:w-[328px] desktop:w-[328px]";
 
-// All three cards loop their illustration animation continuously.
 const LOOP_DURATION = 4.2;
 const LOOP_TRANSITION = {
   duration: LOOP_DURATION,
@@ -29,9 +28,7 @@ function AdsArt() {
   return (
     <div className={cardClass}>
       <div className={stageClass}>
-        {/* Inner positioning area: 195 x 163 */}
         <div className="relative h-[163px] w-[195px]">
-          {/* Vector 2549 — long right curve: bottom:0 right:26px, 74x138 */}
           <svg
             aria-hidden="true"
             className="absolute bottom-0 right-[26px] h-[138px] w-[74px]"
@@ -59,7 +56,6 @@ function AdsArt() {
             </defs>
           </svg>
 
-          {/* Vector 2551 — short right curve: bottom:15px right:27px, 72x71 */}
           <svg
             aria-hidden="true"
             className="absolute bottom-[15px] right-[27px] h-[71px] w-[72px]"
@@ -86,7 +82,6 @@ function AdsArt() {
             </defs>
           </svg>
 
-          {/* Vector 2548 — long left curve: top:25px left:26px, 69x128 */}
           <svg
             aria-hidden="true"
             className="absolute left-[26px] top-[25px] h-[128px] w-[69px]"
@@ -114,7 +109,6 @@ function AdsArt() {
             </defs>
           </svg>
 
-          {/* Vector 2550 — short left curve: bottom:17px left:28px, 67x70 */}
           <svg
             aria-hidden="true"
             className="absolute bottom-[17px] left-[28px] h-[70px] w-[67px]"
@@ -141,10 +135,8 @@ function AdsArt() {
             </defs>
           </svg>
 
-          {/* Vector 2547 — center vertical line: bottom:1px, centered, 4x136 */}
           <span className="absolute bottom-px left-[calc(49.7436%-2px)] h-[136px] w-1 bg-gradient-to-b from-[#83f6f8] to-transparent" />
 
-          {/* Frame 8483 — YouTube tile: loops left 0 → 14 → 0 */}
           <motion.span
             animate={{ x: [0, 14, 0] }}
             className="absolute left-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
@@ -154,7 +146,6 @@ function AdsArt() {
             <YoutubeIcon />
           </motion.span>
 
-          {/* Frame 8482 — Meta tile: loops right 0 → 12 → 0 */}
           <motion.span
             animate={{ x: [0, -12, 0] }}
             className="absolute right-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
@@ -164,7 +155,6 @@ function AdsArt() {
             <MetaIcon />
           </motion.span>
 
-          {/* Frame 8479 — GoogleAds tile: loops top 0→18→0, left 14→24→14 */}
           <motion.span
             animate={{ x: [0, 10, 0], y: [0, 18, 0] }}
             className="absolute left-[14px] top-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
@@ -173,7 +163,6 @@ function AdsArt() {
             <GoogleAdsIcon />
           </motion.span>
 
-          {/* Frame 8480 — Facebook tile: loops top 0→11→0 */}
           <motion.span
             animate={{ y: [0, 11, 0] }}
             className="absolute top-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
@@ -183,7 +172,6 @@ function AdsArt() {
             <FacebookIcon />
           </motion.span>
 
-          {/* Frame 8481 — Instagram tile: loops top 0→18→0, right 14→21→14 */}
           <motion.span
             animate={{ x: [0, -7, 0], y: [0, 18, 0] }}
             className="absolute right-[14px] top-0 flex h-7 w-[29px] items-center justify-center rounded bg-white will-change-transform"
@@ -192,7 +180,6 @@ function AdsArt() {
             <InstagramIcon />
           </motion.span>
 
-          {/* fluent:people-team — bottom center, 40x40, doesn't move */}
           <svg
             aria-hidden="true"
             className="absolute bottom-2 left-[calc(50.2564%-20px)] h-10 w-10"
@@ -233,9 +220,7 @@ function CreativeArt() {
   return (
     <div className={cardClass}>
       <div className={stageClass}>
-        {/* Inner positioning area: 181 x 167, rotated 1deg */}
         <div className="relative h-[167px] w-[181px] rotate-[1deg]">
-          {/* Mask group rings — top:0 bottom:4px right:0, 167x163 */}
           <svg
             aria-hidden="true"
             className="absolute right-0 top-0 h-[163px] w-[167px]"
@@ -273,12 +258,10 @@ function CreativeArt() {
             </defs>
           </svg>
 
-          {/* Frame 8486 — center badge (always visible): top:~65px left:~78px */}
           <RoundBadge className="left-[calc(53.5912%-19px)] top-[calc(49.7006%-18.5px)]">
             <PeopleMiniIcon />
           </RoundBadge>
 
-          {/* Frame 8484 — middle-left badge (initial visible): top:~73px left:0 */}
           <motion.span
             animate={{ opacity: [1, 0, 0, 1] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", times: [0, 0.33, 0.67, 1] }}
@@ -287,7 +270,6 @@ function CreativeArt() {
             <BriefcaseIcon />
           </motion.span>
 
-          {/* Frame 8485 — bottom-right badge: appears mid-cycle */}
           <motion.span
             animate={{ opacity: [0, 1, 0, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", times: [0, 0.33, 0.67, 1] }}
@@ -296,7 +278,6 @@ function CreativeArt() {
             <BriefcaseIcon />
           </motion.span>
 
-          {/* Frame 8483 — top-right badge: appears late-cycle */}
           <motion.span
             animate={{ opacity: [0, 0, 1, 0] }}
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", times: [0, 0.33, 0.67, 1] }}
@@ -314,10 +295,8 @@ function ConversionArt() {
   return (
     <div className={cardClass}>
       <div className={stageClass}>
-        {/* Inner positioning area: 258 x 138 */}
         <div className="relative h-[138px] w-[258px]">
           <BrowserWindow />
-          {/* DashboardPhone: loops left -12 → 9 → -12 */}
           <motion.div
             animate={{ left: [-12, 9, -12] }}
             className="absolute bottom-px"
@@ -325,7 +304,6 @@ function ConversionArt() {
           >
             <DashboardPhone />
           </motion.div>
-          {/* TallPhone: loops right 0 → 30 → 0 */}
           <motion.div
             animate={{ right: [0, 30, 0] }}
             className="absolute bottom-0"

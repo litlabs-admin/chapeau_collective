@@ -1,7 +1,6 @@
 export type NavItem = {
   label: string;
   href: string;
-  count?: string;
 };
 
 export type Metric = {
@@ -25,7 +24,6 @@ export type MediaCard = {
   person: string;
   company: string;
   avatar: string;
-  mediaType: "image" | "video";
   mediaSrc: string;
 };
 
@@ -60,10 +58,9 @@ const asset = (path: string) => `/${path}`;
 export const homePageContent = {
   meta: {
     title: "Chapeau Collective",
-    description:
-      "Chapeau Collective"
+    description: "Chapeau Collective"
   },
-  logo: asset("chapeau-collective-logo.svg"),
+  logo: asset("chapeau-collective-logo.png"),
   nav: [
     { label: "Services", href: "#services-section" },
     { label: "Results", href: "#results-section" },
@@ -75,10 +72,6 @@ export const homePageContent = {
     title: "Where strategy and revenue align.",
     copy:
       "From demand creation to closed deals, every move is engineered for growth. We operate at the intersection of marketing, sales and AI to build revenue engines that compound over time.",
-    primaryCta: {
-      label: "Let's Talk",
-      href: "#book-a-call-section"
-    },
     secondaryCta: {
       label: "See Results",
       href: "#results-section"
@@ -142,7 +135,7 @@ export const homePageContent = {
     id: "results-section",
     eyebrow: "Results",
     intro:
-      "We don't just advise. We deliver. Our clients don't just see growth they experience it. Here's a glimpse of what we've built together.",
+      "We don't just talk performance . We deliver it. Our clients don't just see growth, they experience transformation. Here's a glimpse of what we've done.",
     logosHeading: "Clients include",
     logos: [
       asset("images/clients/racam_logo.png"),
@@ -156,7 +149,6 @@ export const homePageContent = {
         person: "Priya Shah, Managing Director",
         company: "Northline Advisory",
         avatar: asset("images/testimonials/priya-shah-avatar.png"),
-        mediaType: "image",
         mediaSrc: asset("images/testimonials/northline-advisory-media.png")
       },
       {
@@ -166,7 +158,6 @@ export const homePageContent = {
         person: "Daniel Carter, Commercial Director",
         company: "SummitBridge Consulting",
         avatar: asset("images/testimonials/daniel-carter-avatar.png"),
-        mediaType: "image",
         mediaSrc: asset("images/testimonials/summitbridge-media.png")
       },
       {
@@ -176,7 +167,6 @@ export const homePageContent = {
         person: "Alex Morgan, Operations Lead",
         company: "Civitas Enterprise Group",
         avatar: asset("images/testimonials/alex-morgan-avatar.png"),
-        mediaType: "image",
         mediaSrc: asset("images/testimonials/civitas-enterprise-media.png")
       }
     ] satisfies MediaCard[]
@@ -349,14 +339,13 @@ export const homePageContent = {
       { label: "Home", href: "/" },
       { label: "Insights / Blog", href: "/blog" },
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Terms of Service", href: "/terms-of-service" },
+      { label: "Terms of Service", href: "/terms-of-service" }
     ],
     socials: [
       { label: "Instagram", href: "https://www.instagram.com/" },
       { label: "Facebook", href: "https://www.facebook.com/" },
       { label: "YouTube", href: "https://youtube.com/" }
     ],
-    copyright: "© 2026 Chapeau Collective. All rights reserved.",
-    wordmark: "Chapeau Collective"
+    copyright: "© 2026 Chapeau Collective. All rights reserved."
   }
 };

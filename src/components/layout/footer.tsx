@@ -2,7 +2,7 @@
 
 import { homePageContent } from "@/content/site";
 import { NewsletterForm } from "../forms";
-import { Reveal, SmartLink } from "./shared";
+import { Reveal, SmartLink } from "@/components/ui/shared";
 
 type FooterLink = {
   label: string;
@@ -18,7 +18,7 @@ function FooterColumn({
 }) {
   return (
     <div className="flex w-full flex-col items-start gap-2 overflow-hidden desktop:w-[200px]">
-      <h4 className="ad-card-title w-full">
+      <h4 className="card-title w-full">
         {title}
       </h4>
       <div className="flex w-full flex-col items-start gap-2">
@@ -81,9 +81,9 @@ function SocialLink({ social }: { social: { label: string; href: string } }) {
 function FooterWordmark() {
   return (
     <img
-      alt="Chapeau Collective"
+      alt={homePageContent.meta.title}
       className="h-auto w-full"
-      src="/chapeau-collective-logo.png"
+      src={homePageContent.logo}
     />
   );
 }
@@ -96,7 +96,7 @@ export function Footer() {
       <div className="flex w-full max-w-[358px] flex-col items-start justify-start gap-6 tablet:max-w-[710px] tablet:flex-row desktop:max-w-[1800px] desktop:flex-row desktop:justify-between">
         <div className="flex w-full flex-col items-center gap-6 tablet:w-px tablet:flex-1 desktop:w-[30%] desktop:flex-none">
           <Reveal className="w-full">
-            <h3 className="ad-intro-title w-full">
+            <h3 className="intro-title w-full">
               {footer.headline}
             </h3>
           </Reveal>

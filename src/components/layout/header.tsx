@@ -4,7 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import type { NavItem } from "@/content/site";
 import { homePageContent } from "@/content/site";
-import { SmartLink } from "./shared";
+import { SmartLink } from "@/components/ui/shared";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +19,9 @@ export function Header() {
           href="/#hero-section"
         >
           <img
-            alt="Chapeau Collective"
+            alt={homePageContent.meta.title}
             className="h-full w-full object-contain object-left"
-            src="/chapeau-collective-logo.png"
+            src={homePageContent.logo}
           />
         </SmartLink>
 
@@ -33,22 +33,13 @@ export function Header() {
               href={homeHash(item.href)}
             >
               <span>{item.label}</span>
-              {item.count ? (
-                <span className="ml-[2px] text-[14px] leading-[1.4] text-[#999]">
-                  {item.count}
-                </span>
-              ) : null}
             </SmartLink>
           ))}
         </div>
 
         <SmartLink
-          className="hidden items-center justify-center gap-2 rounded-full bg-accent px-4 py-2 text-[14px] font-medium leading-[1.4] text-white tablet:inline-flex desktop:inline-flex"
+          className="hidden items-center justify-center gap-2 rounded-full bg-accent px-4 py-2 text-[14px] font-medium leading-[1.4] text-white shadow-button tablet:inline-flex desktop:inline-flex"
           href="/#book-a-call-section"
-          style={{
-            boxShadow:
-              "inset 0 4px 4px 0 rgba(255,255,255,0.2), inset 4px 0 4px 0 rgba(255,255,255,0.2), inset 0 -4px 4px 0 rgba(255,255,255,0.2), inset -4px 0 4px 0 rgba(255,255,255,0.2)"
-          }}
         >
           Let's Talk
         </SmartLink>
@@ -93,21 +84,12 @@ export function Header() {
                   onClick={() => setIsOpen(false)}
                 >
                   <span>{item.label}</span>
-                  {item.count ? (
-                    <span className="text-[14px] leading-[1.4] text-[#999]">
-                      {item.count}
-                    </span>
-                  ) : null}
                 </SmartLink>
               ))}
               <SmartLink
-                className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-accent px-4 py-2 text-[14px] font-medium leading-[1.4] text-white"
+                className="inline-flex items-center justify-center gap-2 self-start rounded-full bg-accent px-4 py-2 text-[14px] font-medium leading-[1.4] text-white shadow-button"
                 href="/#book-a-call-section"
                 onClick={() => setIsOpen(false)}
-                style={{
-                  boxShadow:
-                    "inset 0 4px 4px 0 rgba(255,255,255,0.2), inset 4px 0 4px 0 rgba(255,255,255,0.2), inset 0 -4px 4px 0 rgba(255,255,255,0.2), inset -4px 0 4px 0 rgba(255,255,255,0.2)"
-                }}
               >
                 Let's Talk
               </SmartLink>

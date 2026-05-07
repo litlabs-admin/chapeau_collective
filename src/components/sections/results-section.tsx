@@ -18,12 +18,12 @@ export function ResultsSection() {
       <div className="mx-auto flex w-full max-w-[358px] flex-col items-center justify-center gap-10 overflow-hidden tablet:max-w-[710px] tablet:gap-20 desktop:max-w-[1200px] desktop:gap-20">
         <div className="flex w-full flex-col items-start justify-start gap-4 desktop:flex-row">
           <div className="w-full desktop:w-[30%]">
-            <h6 className="section-eyebrow">Results</h6>
+            <h6 className="section-eyebrow">{section.eyebrow}</h6>
           </div>
 
           <div className="flex w-full flex-col items-center justify-center gap-8 overflow-hidden desktop:w-px desktop:flex-1">
-            <h3 className="ad-intro-title w-full">
-              We don't just talk performance . We deliver it. Our clients don't just see growth, they experience transformation. Here's a glimpse of what we've done.
+            <h3 className="intro-title w-full">
+              {section.intro}
             </h3>
 
             <div className="flex w-full flex-row items-center justify-center gap-6 overflow-hidden">
@@ -31,7 +31,7 @@ export function ResultsSection() {
                 <h2
                   className="whitespace-pre font-display text-[12.8px] font-medium leading-none text-ink"
                 >
-                  Clients include
+                  {section.logosHeading}
                 </h2>
               </div>
 
@@ -45,7 +45,7 @@ export function ResultsSection() {
                       "linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 12.5%, rgba(0,0,0,1) 87.5%, rgba(0,0,0,0) 100%)"
                   }}
                 >
-                  <ul className="ad-logo-marquee flex h-full items-center gap-10">
+                  <ul className="logo-marquee flex h-full items-center gap-10">
                     {marqueeLogos.map((logo, index) => (
                       <li
                         aria-hidden={index >= logos.length}
@@ -83,7 +83,7 @@ export function ResultsSection() {
               </div>
 
               <div className="flex w-full flex-col items-center justify-end gap-2">
-                <h4 className="ad-card-title w-full">{card.title}</h4>
+                <h4 className="card-title w-full">{card.title}</h4>
               </div>
 
               <div className="flex w-full flex-col items-start justify-end gap-6">

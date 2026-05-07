@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogArticlePage } from "@/components/blog/blog-article-page";
 import { blogArticles, getBlogArticle } from "@/content/blog";
+import { homePageContent } from "@/content/site";
 
 type PageProps = {
   params: Promise<{
@@ -26,7 +27,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${article.title} | Chapeau Collective`,
+    title: `${article.title} | ${homePageContent.meta.title}`,
     description: article.description,
     openGraph: {
       title: article.title,

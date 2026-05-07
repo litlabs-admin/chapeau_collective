@@ -1,9 +1,9 @@
 import Image from "next/image";
 import type { BlogArticle, BlogContentBlock } from "@/content/blog";
 import { getRelatedArticles } from "@/content/blog";
-import { Footer } from "@/components/home/footer";
-import { Header } from "@/components/home/header";
-import { QuoteSection } from "@/components/home/quote-section";
+import { Footer } from "@/components/layout/footer";
+import { Header } from "@/components/layout/header";
+import { QuoteSection } from "@/components/layout/quote-section";
 import { BlogCard } from "./blog-card";
 
 function renderBlock(block: BlogContentBlock, key: string) {
@@ -144,7 +144,7 @@ export function BlogArticlePage({ article }: { article: BlogArticle }) {
     <>
       <Header />
       <main className="overflow-x-clip bg-white pt-[96px]">
-        <section className="flex w-full flex-col items-center gap-10 overflow-hidden bg-white py-[60px] tablet:px-10 tablet:py-20 desktop:px-0 desktop:py-[100px]">
+        <section className="flex w-full flex-col items-center gap-10 overflow-hidden py-[60px] tablet:px-10 tablet:py-20 desktop:px-0 desktop:py-[100px]">
           <div className="mx-auto flex w-full max-w-[358px] flex-col items-center gap-10 pt-[100px] tablet:max-w-[700px] tablet:pt-0 desktop:max-w-[1100px] desktop:pt-0">
             <header className="flex w-full flex-col items-center gap-6">
               <div className="flex w-full flex-col items-center gap-2">
@@ -172,7 +172,7 @@ export function BlogArticlePage({ article }: { article: BlogArticle }) {
           </div>
         </section>
 
-        <section className="flex w-full flex-col items-center overflow-hidden bg-white pb-[80px] pt-10 tablet:px-10 tablet:py-20 desktop:px-0 desktop:pb-[80px] desktop:pt-10">
+        <section className="flex w-full flex-col items-center overflow-hidden pb-[80px] pt-10 tablet:px-10 tablet:py-20 desktop:px-0 desktop:pb-[80px] desktop:pt-10">
           <div className="mx-auto flex w-full max-w-[358px] flex-col items-center gap-6 tablet:max-w-[710px] desktop:max-w-[1100px] desktop:gap-5">
             <div className="flex w-full flex-col items-center">
               <h2 className="w-full text-left font-display text-[32px] font-medium leading-[1.2] text-ink tablet:text-[34.88px] desktop:text-[48px]">

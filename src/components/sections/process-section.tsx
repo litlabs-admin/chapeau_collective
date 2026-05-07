@@ -1,7 +1,7 @@
 "use client";
 
 import { homePageContent } from "@/content/site";
-import { Reveal } from "./shared";
+import { Reveal } from "@/components/ui/shared";
 
 const cardPlacement = [
   "tablet:col-start-1 desktop:col-start-1",
@@ -27,7 +27,7 @@ export function ProcessSection() {
           </Reveal>
           <div className="w-full min-w-0 desktop:flex-1">
             <Reveal delay={0.04}>
-              <h3 className="ad-intro-title">
+              <h3 className="intro-title">
                 {section.intro}
               </h3>
             </Reveal>

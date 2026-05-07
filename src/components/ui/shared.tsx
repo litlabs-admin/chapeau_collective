@@ -81,19 +81,17 @@ const EASE_OUT_EXPO: [number, number, number, number] = [0.22, 1, 0.36, 1];
 export function AnimatedHeadline({
   text,
   className,
-  desktopBreakAfter,
-  ...props
+  desktopBreakAfter
 }: {
   text: string;
   className?: string;
   desktopBreakAfter?: string;
-  [key: string]: any;
 }) {
   const reduceMotion = useReducedMotion();
   const words = text.split(" ");
 
   return (
-    <h1 className={className} {...props}>
+    <h1 className={className}>
       {words.map((word, wordIndex) => {
         const isBreakAnchor =
           desktopBreakAfter !== undefined && word === desktopBreakAfter;
@@ -134,53 +132,6 @@ export function AnimatedHeadline({
   );
 }
 
-export function AnimatedWords({
-  text,
-  className,
-  as: Tag = "span",
-  delayBase = 0,
-  staggerPerWord = 0.06
-}: {
-  text: string;
-  className?: string;
-  as?: any;
-  delayBase?: number;
-  staggerPerWord?: number;
-}) {
-  const reduceMotion = useReducedMotion();
-  const ref = useRef<HTMLElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
-  const words = text.split(" ");
-
-  return (
-    <Tag ref={ref} className={className}>
-      {words.map((word, i) => (
-        <span key={`w-${i}`} className="inline">
-          <motion.span
-            className="inline-block"
-            initial={reduceMotion ? false : { opacity: 0.001, y: 5 }}
-            animate={
-              reduceMotion
-                ? undefined
-                : inView
-                  ? { opacity: 1, y: 0 }
-                  : { opacity: 0.001, y: 5 }
-            }
-            transition={{
-              duration: 0.55,
-              delay: delayBase + i * staggerPerWord,
-              ease: EASE_OUT_EXPO
-            }}
-          >
-            {word}
-          </motion.span>
-          {i < words.length - 1 && " "}
-        </span>
-      ))}
-    </Tag>
-  );
-}
-
 export function AnimatedChars({
   text,
   className,
@@ -190,7 +141,7 @@ export function AnimatedChars({
 }: {
   text: string;
   className?: string;
-  as?: any;
+  as?: React.ElementType;
   delayBase?: number;
   staggerPerChar?: number;
 }) {
@@ -207,8 +158,7 @@ export function AnimatedChars({
         const node = (
           <span
             key={`w-${wIdx}`}
-            className="inline-block"
-            style={{ whiteSpace: "nowrap" }}
+            className="inline-block whitespace-nowrap"
           >
             {wordChars.map((ch, cIdx) => {
               const idx = charCounter++;

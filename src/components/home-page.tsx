@@ -1,15 +1,14 @@
-import { Header } from "./home/header";
-import { HeroSection } from "./home/hero-section";
-import { MetricsSection } from "./home/metrics-section";
-import { ServicesSection } from "./home/services-section";
-import { ResultsSection } from "./home/results-section";
-import { ProcessSection } from "./home/process-section";
-import { TeamSection } from "./home/team-section";
-import { BlogSection } from "./home/blog-section";
-import { FaqSection } from "./home/faq-section";
-import { QuoteSection } from "./home/quote-section";
-import { Footer } from "./home/footer";
-
+import { Header } from "./layout/header";
+import { HeroSection } from "./sections/hero-section";
+import { MetricsSection } from "./sections/metrics-section";
+import { ServicesSection } from "./sections/services-section";
+import { ResultsSection } from "./sections/results-section";
+import { ProcessSection } from "./sections/process-section";
+import { TeamSection } from "./sections/team-section";
+import { BlogSection } from "./sections/blog-section";
+import { FaqSection } from "./sections/faq-section";
+import { QuoteSection } from "./layout/quote-section";
+import { Footer } from "./layout/footer";
 
 export function HomePage() {
   return (
@@ -27,7 +26,6 @@ export function HomePage() {
         <QuoteSection />
         <Footer />
       </main>
-
     </>
   );
 }

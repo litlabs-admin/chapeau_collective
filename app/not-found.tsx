@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Header } from "@/components/home/header";
-import { Footer } from "@/components/home/footer";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
 export default function NotFound() {
   return (

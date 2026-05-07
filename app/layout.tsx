@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
+import { homePageContent } from "@/content/site";
 import "./globals.css";
 
 const aeonik = localFont({
@@ -27,9 +28,8 @@ const aeonik = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Chapeau Collective",
-  description:
-    "Chapeau Collective"
+  title: homePageContent.meta.title,
+  description: homePageContent.meta.description
 };
 
 export default function RootLayout({

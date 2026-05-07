@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { homePageContent } from "@/content/site";
-import { SectionIntro, Reveal } from "./shared";
+import { SectionIntro, Reveal } from "@/components/ui/shared";
 
 export function FaqSection() {
   const section = homePageContent.faqSection;
@@ -17,7 +17,7 @@ export function FaqSection() {
       <div className="mx-auto flex w-full max-w-[358px] flex-col gap-[24px] tablet:max-w-[710px] tablet:gap-10 desktop:max-w-[1200px] desktop:gap-10">
         <SectionIntro eyebrow={section.eyebrow}>
           <div className="flex w-full flex-col gap-10">
-            <h3 className="ad-intro-title">
+            <h3 className="intro-title">
               {section.intro}
             </h3>
 
@@ -36,7 +36,6 @@ export function FaqSection() {
                         onClick={() => setOpenIndex(isOpen ? -1 : index)}
                         type="button"
                       >
-                        {/* Plus icon — absolutely positioned at left:0, top:25px */}
                         <div className="absolute left-0 top-[25px] h-4 w-4 overflow-hidden">
                           <div className="absolute left-[calc(50%-8px)] top-[calc(50%-1px)] h-[2px] w-4 rounded-full bg-accent-dark" />
                           <div
@@ -44,7 +43,7 @@ export function FaqSection() {
                           />
                         </div>
 
-                        <p className="font-instrument text-[16px] font-medium leading-[1.4] text-ink desktop:text-[19.2px]">
+                        <p className="font-display text-[16px] font-medium leading-[1.4] text-ink desktop:text-[19.2px]">
                           {item.question}
                         </p>
                       </button>

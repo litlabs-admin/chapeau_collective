@@ -1,7 +1,7 @@
 "use client";
 
 import { homePageContent } from "@/content/site";
-import { MetricCounter, Reveal } from "./shared";
+import { MetricCounter, Reveal } from "@/components/ui/shared";
 
 export function MetricsSection() {
   const intro = homePageContent.servicesSection;
@@ -42,7 +42,7 @@ export function MetricsSection() {
                       <MetricCounter suffix={metric.suffix} value={metric.value} />
                     </p>
                     <div className="row-start-3 flex h-full w-full flex-col items-start gap-[4px] overflow-hidden">
-                      <p className="font-instrument text-[16px] font-medium leading-[1.4] text-ink desktop:text-[19.2px]">
+                      <p className="font-display text-[16px] font-medium leading-[1.4] text-ink desktop:text-[19.2px]">
                         {metric.label}
                       </p>
                       <p className="font-display text-[14px] font-medium leading-[1.2] text-ink">

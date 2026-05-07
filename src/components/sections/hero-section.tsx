@@ -6,16 +6,15 @@ import {
   AnimatedChars,
   AnimatedHeadline,
   SmartLink
-} from "./shared";
+} from "@/components/ui/shared";
 
 export function HeroSection() {
   const { hero } = homePageContent;
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-white p-0 desktop:px-[20px] desktop:pt-[63px] desktop:pb-[20px] tablet:px-[20px] tablet:pt-[63px] tablet:pb-[20px]"
+      className="relative h-screen w-full overflow-hidden bg-white p-0 desktop:px-[20px] desktop:pt-[63px] desktop:pb-[20px] tablet:px-[20px] tablet:pt-[63px] tablet:pb-[20px]"
       id={hero.sectionId}
-      style={{ height: "100vh" }}
     >
       <div
         className="relative flex h-full w-full flex-col items-center justify-center gap-[10px] overflow-hidden rounded-none px-[20px] pb-[80px] pt-[120px] desktop:rounded-[20px] desktop:px-[20px] desktop:py-[80px] tablet:rounded-[20px] tablet:px-[20px] tablet:py-[80px]"
@@ -79,8 +78,7 @@ export function HeroSection() {
 
         <div
           aria-hidden="true"
-          className="absolute inset-0 z-0 order-2"
-          style={{ backgroundColor: "#08080833" }}
+          className="absolute inset-0 z-0 order-2 bg-[#08080833]"
         />
       </div>
     </section>

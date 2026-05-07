@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { homePageContent } from "@/content/site";
-import { Reveal, SectionIntro } from "./shared";
+import { Reveal, SectionIntro } from "@/components/ui/shared";
 
 export function BlogSection() {
   const section = homePageContent.blogSection;
@@ -15,7 +15,7 @@ export function BlogSection() {
     >
       <div className="mx-auto flex w-full max-w-[358px] flex-col items-center gap-10 tablet:max-w-[710px] desktop:max-w-[1200px]">
         <SectionIntro eyebrow={section.eyebrow}>
-          <h3 className="ad-intro-title">
+          <h3 className="intro-title">
             {section.intro}
           </h3>
         </SectionIntro>

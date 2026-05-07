@@ -1,7 +1,7 @@
 "use client";
 
 import { homePageContent } from "@/content/site";
-import { Reveal } from "./shared";
+import { Reveal } from "@/components/ui/shared";
 import { ServiceArt } from "./service-art";
 
 export function ServicesSection() {
