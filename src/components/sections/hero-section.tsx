@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { homePageContent } from "@/content/site";
 import {
   AnimatedChars,
@@ -19,14 +18,17 @@ export function HeroSection() {
       <div
         className="relative flex h-full w-full flex-col items-center justify-center gap-[10px] overflow-hidden rounded-none px-[20px] pb-[80px] pt-[120px] desktop:rounded-[20px] desktop:px-[20px] desktop:py-[80px] tablet:rounded-[20px] tablet:px-[20px] tablet:py-[80px]"
       >
-        <Image
-          alt="man in black jacket holding orange and black helmet"
-          className="object-cover object-[left_top] desktop:object-[center_top]"
-          fill
-          priority
-          sizes="100vw"
-          src={hero.backdrop}
-        />
+        <video
+          autoPlay
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          loop
+          muted
+          playsInline
+          poster={hero.backdrop}
+          preload="auto"
+        >
+          <source src={hero.backdropVideo} type="video/mp4" />
+        </video>
 
         <div
           className="relative z-[1] order-1 flex w-full max-w-[358px] flex-1 flex-col items-stretch justify-end gap-[24px] desktop:order-none desktop:max-w-[1200px] desktop:flex-row desktop:items-start desktop:justify-between desktop:gap-0 tablet:order-none tablet:max-w-[710px] tablet:flex-row tablet:items-start tablet:justify-between tablet:gap-0"

@@ -1,4 +1,5 @@
 import { cache } from "react";
+import Airtable, { type FieldSet, type Record as AirtableRecord } from "airtable";
 
 export type BlogArticle = {
   slug: string;
@@ -12,41 +13,17 @@ export type BlogArticle = {
   contentMarkdown: string;
 };
 
-type AirtableAttachment = {
-  url?: string;
-};
-
-type AirtableRecord = {
-  id: string;
-  createdTime: string;
-  fields: Record<string, unknown>;
-};
-
-type AirtableListResponse = {
-  records: AirtableRecord[];
-  offset?: string;
-};
-
-const airtableApiUrl = "https://api.airtable.com/v0";
-const revalidateSeconds = 300;
-
-function getString(fields: Record<string, unknown>, key: string) {
-  const value = fields[key];
-  if (typeof value === "string") {
-    return value.trim();
-  }
-  if (typeof value === "number") {
-    return String(value);
-  }
+function getString(record: AirtableRecord<FieldSet>, field: string) {
+  const value = record.get(field);
+  if (typeof value === "string") return value.trim();
+  if (typeof value === "number") return String(value);
   return "";
 }
 
-function getAttachmentUrl(fields: Record<string, unknown>, key: string) {
-  const value = fields[key];
-  if (!Array.isArray(value)) {
-    return "";
-  }
-  const first = value[0] as AirtableAttachment | undefined;
+function getAttachmentUrl(record: AirtableRecord<FieldSet>, field: string) {
+  const value = record.get(field);
+  if (!Array.isArray(value)) return "";
+  const first = value[0] as { url?: unknown } | undefined;
   return typeof first?.url === "string" ? first.url : "";
 }
 
@@ -57,86 +34,67 @@ function normalizeSlug(title: string) {
     .replace(/^-+|-+$/g, "");
 }
 
-function getAirtableBlogConfig() {
-  const token = process.env.AIRTABLE_ACCESS_TOKEN;
+function getBase() {
+  const apiKey = process.env.AIRTABLE_ACCESS_TOKEN;
   const baseId = process.env.AIRTABLE_BASE_ID;
   const tableName = process.env.AIRTABLE_BLOG_TABLE_NAME;
 
-  if (!token || !baseId || !tableName) {
-    return null;
-  }
+  if (!apiKey || !baseId || !tableName) return null;
 
-  return { baseId, tableName, token };
+  return { base: new Airtable({ apiKey }).base(baseId), tableName };
 }
 
 function sortArticles(articles: BlogArticle[]) {
   return [...articles].sort((a, b) => b.date.localeCompare(a.date));
 }
 
-function mapRecord(record: AirtableRecord): BlogArticle | null {
-  const { fields } = record;
-  const title = getString(fields, "Title");
-  const slug = getString(fields, "Slug") || normalizeSlug(title);
-  const image = getAttachmentUrl(fields, "Image");
-  const contentMarkdown = getString(fields, "Content Markdown");
+function mapRecord(record: AirtableRecord<FieldSet>): BlogArticle | null {
+  const title = getString(record, "Title");
+  const slug = getString(record, "Slug") || normalizeSlug(title);
+  const image = getAttachmentUrl(record, "Image");
+  const contentMarkdown = getString(record, "Content Markdown");
 
-  if (!title || !slug || !image || !contentMarkdown) {
-    return null;
-  }
+  if (!title || !slug || !image || !contentMarkdown) return null;
+
+  const createdTime = (record as unknown as { _rawJson?: { createdTime?: string } })
+    ._rawJson?.createdTime;
 
   return {
     slug,
     title,
-    description: getString(fields, "Description"),
+    description: getString(record, "Description"),
     image,
-    readTime: getString(fields, "Read Time") || "3 mins",
-    author: getString(fields, "Author") || "Chapeau Collective",
-    authorRole: getString(fields, "Author Role") || "Content writer",
-    date: getString(fields, "Date") || record.createdTime.slice(0, 10),
+    readTime: getString(record, "Read Time") || "3 mins",
+    author: getString(record, "Author") || "Chapeau Collective",
+    authorRole: getString(record, "Author Role") || "Content writer",
+    date: getString(record, "Date") || (createdTime ? createdTime.slice(0, 10) : ""),
     contentMarkdown
   };
 }
 
-async function fetchAirtableBlogArticles() {
-  const config = getAirtableBlogConfig();
-  if (!config) {
-    return null;
-  }
-
-  const records: AirtableRecord[] = [];
-  let offset: string | undefined;
-
-  do {
-    const params = new URLSearchParams({ pageSize: "100" });
-    if (offset) {
-      params.set("offset", offset);
-    }
-
-    const url = `${airtableApiUrl}/${config.baseId}/${encodeURIComponent(config.tableName)}?${params.toString()}`;
-    const response = await fetch(url, {
-      headers: { Authorization: `Bearer ${config.token}` },
-      next: { revalidate: revalidateSeconds }
-    });
-
-    if (!response.ok) {
-      throw new Error(`Airtable blog fetch failed with status ${response.status}.`);
-    }
-
-    const data = (await response.json()) as AirtableListResponse;
-    records.push(...data.records);
-    offset = data.offset;
-  } while (offset);
-
-  return sortArticles(
-    records.map(mapRecord).filter((article): article is BlogArticle => article !== null)
-  );
-}
-
 export const getBlogArticles = cache(async (): Promise<BlogArticle[]> => {
+  const config = getBase();
+  if (!config) return [];
+
   try {
-    return (await fetchAirtableBlogArticles()) ?? [];
+    const records = await config.base<FieldSet>(config.tableName)
+      .select({ pageSize: 100 })
+      .all();
+
+    return sortArticles(
+      records
+        .map(mapRecord)
+        .filter((article): article is BlogArticle => article !== null)
+    );
   } catch (error) {
-    console.error(error);
+    const detail = error as {
+      error?: string;
+      message?: string;
+      statusCode?: number;
+    };
+    console.warn(
+      `[blog] Airtable fetch failed, falling back to empty list. status=${detail.statusCode ?? "?"} code=${detail.error ?? "?"} message=${detail.message ?? "?"}`
+    );
     return [];
   }
 });
