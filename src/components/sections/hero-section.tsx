@@ -12,11 +12,11 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative h-screen w-full overflow-hidden bg-white p-0 desktop:px-[20px] desktop:pt-[63px] desktop:pb-[20px] tablet:px-[20px] tablet:pt-[63px] tablet:pb-[20px]"
+      className="relative h-screen w-full overflow-hidden bg-white"
       id={hero.sectionId}
     >
       <div
-        className="relative flex h-full w-full flex-col items-center justify-center gap-[10px] overflow-hidden rounded-none px-[20px] pb-[80px] pt-[120px] desktop:rounded-[20px] desktop:px-[20px] desktop:py-[80px] tablet:rounded-[20px] tablet:px-[20px] tablet:py-[80px]"
+        className="relative flex h-full w-full flex-col items-center justify-center gap-[10px] overflow-hidden px-[20px] pb-[80px] pt-[120px] desktop:px-[20px] desktop:py-[80px] tablet:px-[20px] tablet:py-[80px]"
       >
         <video
           autoPlay
@@ -26,7 +26,7 @@ export function HeroSection() {
           playsInline
           preload="auto"
         >
-          <source src={hero.backdropVideo} type="video/mp4" />
+          <source src={hero.backdropVideo} type="video/quicktime" />
         </video>
 
         <div

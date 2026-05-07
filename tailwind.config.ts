@@ -17,8 +17,8 @@ const config: Config = {
         "ink-soft": "rgba(18, 18, 18, 0.8)",
         line: "#bababa40",
         mist: "#f7f7f7",
-        accent: "#0F6F78",
-        "accent-dark": "#0B4F5C"
+        accent: "#000000",
+        "accent-dark": "#000000"
       },
       fontFamily: {
         body: "var(--font-aeonik), Inter, Arial, sans-serif",

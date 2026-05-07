@@ -54,6 +54,7 @@ export const homePageContent = {
     description: "Chapeau Collective"
   },
   logo: asset("chapeau-collective-logo.svg"),
+  headerLogo: asset("chapeau-collective-header-logo.svg"),
   nav: [
     { label: "Services", href: "#services-section" },
     { label: "Results", href: "#results-section" },
@@ -69,7 +70,7 @@ export const homePageContent = {
       label: "See Results",
       href: "#results-section"
     },
-    backdropVideo: asset("images/hero/hero-backdrop-video.mp4")
+    backdropVideo: asset("images/hero/hero-backdrop-video.mov")
   },
   metricsSectionId: "metrics-section",
   metrics: [
@@ -316,11 +317,6 @@ export const homePageContent = {
       { label: "Insights / Blog", href: "/blog" },
       { label: "Privacy Policy", href: "/privacy-policy" },
       { label: "Terms of Service", href: "/terms-of-service" }
-    ],
-    socials: [
-      { label: "Instagram", href: "https://www.instagram.com/" },
-      { label: "Facebook", href: "https://www.facebook.com/" },
-      { label: "YouTube", href: "https://youtube.com/" }
     ],
     copyright: "© 2026 Chapeau Collective. All rights reserved."
   }

@@ -1,18 +1,41 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import type { NavItem } from "@/content/site";
 import { homePageContent } from "@/content/site";
 import { SmartLink } from "@/components/ui/shared";
 
 export function Header() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
+  const [pastHero, setPastHero] = useState(!isHome);
   const navItems = homePageContent.nav as readonly NavItem[];
   const homeHash = (href: string) => (href.startsWith("#") ? `/${href}` : href);
 
+  useEffect(() => {
+    if (!isHome) {
+      setPastHero(true);
+      return;
+    }
+    const onScroll = () => {
+      setPastHero(window.scrollY > window.innerHeight - 100);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHome]);
+
+  const overHero = !pastHero && !isOpen;
+
   return (
-    <header className="fixed inset-x-0 top-0 z-[1000] bg-white">
+    <header
+      className={`fixed inset-x-0 top-0 z-[1000] transition-colors duration-300 ${
+        overHero ? "bg-transparent" : "bg-white"
+      }`}
+    >
       <nav className="flex w-full items-center justify-between px-4 py-[10px] tablet:px-10 desktop:px-10">
         <SmartLink
           className="relative flex h-[42px] w-[200px] shrink-0 items-center"
@@ -20,8 +43,10 @@ export function Header() {
         >
           <img
             alt={homePageContent.meta.title}
-            className="h-full w-full object-contain object-left"
-            src={homePageContent.logo}
+            className={`h-full w-full object-contain object-left transition duration-300 ${
+              overHero ? "brightness-0 invert" : ""
+            }`}
+            src={homePageContent.headerLogo}
           />
         </SmartLink>
 
@@ -29,7 +54,11 @@ export function Header() {
           {navItems.map((item) => (
             <SmartLink
               key={item.label}
-              className="group inline-flex h-[33px] items-center justify-center text-[14px] font-medium leading-[1.4] tracking-normal text-ink-soft transition-colors hover:text-accent-dark font-display"
+              className={`group inline-flex h-[33px] items-center justify-center text-[14px] font-medium leading-[1.4] tracking-normal transition-colors font-display ${
+                overHero
+                  ? "text-white hover:text-white/80"
+                  : "text-ink-soft hover:text-accent-dark"
+              }`}
               href={homeHash(item.href)}
             >
               <span>{item.label}</span>
@@ -53,12 +82,14 @@ export function Header() {
         >
           <span className="relative block h-[20px] w-[20px]">
             <span
-              className={`absolute left-0 top-[8px] h-[2px] w-full bg-ink transition-transform duration-300 ${isOpen ? "translate-y-[2px] rotate-45" : ""
-                }`}
+              className={`absolute left-0 top-[8px] h-[2px] w-full transition-all duration-300 ${
+                overHero ? "bg-white" : "bg-ink"
+              } ${isOpen ? "translate-y-[2px] rotate-45" : ""}`}
             />
             <span
-              className={`absolute left-0 top-[12px] h-[2px] w-full bg-ink transition-transform duration-300 ${isOpen ? "-translate-y-[2px] -rotate-45" : ""
-                }`}
+              className={`absolute left-0 top-[12px] h-[2px] w-full transition-all duration-300 ${
+                overHero ? "bg-white" : "bg-ink"
+              } ${isOpen ? "-translate-y-[2px] -rotate-45" : ""}`}
             />
           </span>
         </button>

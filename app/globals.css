@@ -35,8 +35,8 @@
   }
 
   ::selection {
-    background: rgba(15, 111, 120, 0.18);
-    color: #111111;
+    background: rgba(0, 0, 0, 0.15);
+    color: #ffffff;
   }
 }
 
@@ -61,38 +61,32 @@
 @layer utilities {
   .bg-accent,
   .bg-accent-dark {
-    background-color: #0F6F78 !important;
+    background-color: #000000 !important;
   }
 
   .text-accent,
   .text-accent-dark {
-    color: #0F6F78 !important;
+    color: #000000 !important;
   }
 
   .border-accent,
   .border-accent-dark {
-    border-color: #0F6F78 !important;
+    border-color: #000000 !important;
   }
 
-  .hover\:bg-accent:hover {
-    background-color: #0F6F78 !important;
-  }
-
+  .hover\:bg-accent:hover,
   .hover\:bg-accent-dark:hover {
-    background-color: #0B4F5C !important;
+    background-color: #000000 !important;
   }
 
+  .hover\:text-accent:hover,
   .hover\:text-accent-dark:hover {
-    color: #0B4F5C !important;
-  }
-
-  .hover\:text-accent:hover {
-    color: #0F6F78 !important;
+    color: #000000 !important;
   }
 
   .focus\:border-accent-dark:focus,
   .focus\:border-accent:focus {
-    border-color: #0F6F78 !important;
+    border-color: #000000 !important;
   }
 
   .hidden-scrollbar {
