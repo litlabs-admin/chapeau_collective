@@ -69,7 +69,6 @@ export const homePageContent = {
       label: "See Results",
       href: "#results-section"
     },
-    backdrop: asset("images/hero/hero-backdrop.jpg"),
     backdropVideo: asset("images/hero/hero-backdrop-video.mp4")
   },
   metricsSectionId: "metrics-section",
