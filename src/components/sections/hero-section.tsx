@@ -26,7 +26,7 @@ export function HeroSection() {
           playsInline
           preload="auto"
         >
-          <source src={hero.backdropVideo} type="video/quicktime" />
+          <source src={hero.backdropVideo} type="video/mp4" />
         </video>
 
         <div
