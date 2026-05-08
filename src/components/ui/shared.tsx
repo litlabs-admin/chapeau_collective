@@ -5,22 +5,29 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { motion, useInView, useReducedMotion } from "motion/react";
 
-export function SmartLink({
-  href,
-  className,
-  children,
-  onClick,
-  style
-}: {
+type SmartLinkProps = Omit<
+  React.AnchorHTMLAttributes<HTMLAnchorElement>,
+  "href" | "onClick" | "className" | "style" | "children"
+> & {
   href: string;
   className?: string;
   children: ReactNode;
   onClick?: () => void;
   style?: React.CSSProperties;
-}) {
+};
+
+export function SmartLink({
+  href,
+  className,
+  children,
+  onClick,
+  style,
+  ...rest
+}: SmartLinkProps) {
   if (href.startsWith("http")) {
     return (
       <a
+        {...rest}
         className={className}
         href={href}
         onClick={onClick}
@@ -35,14 +42,14 @@ export function SmartLink({
 
   if (href.startsWith("#")) {
     return (
-      <a className={className} href={href} onClick={onClick} style={style}>
+      <a {...rest} className={className} href={href} onClick={onClick} style={style}>
         {children}
       </a>
     );
   }
 
   return (
-    <Link className={className} href={href} onClick={onClick} style={style}>
+    <Link {...rest} className={className} href={href} onClick={onClick} style={style}>
       {children}
     </Link>
   );

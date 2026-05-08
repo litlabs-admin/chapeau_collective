@@ -1,59 +1,55 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import type { NavItem } from "@/content/site";
 import { homePageContent } from "@/content/site";
 import { SmartLink } from "@/components/ui/shared";
 
-const useIsoLayoutEffect =
-  typeof window !== "undefined" ? useLayoutEffect : useEffect;
-
 export function Header() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
   const [isOpen, setIsOpen] = useState(false);
-  // Initial state must match SSR (server has no scroll info, assumes top of page).
-  // useLayoutEffect below corrects to actual scroll position before first paint.
-  const [pastHero, setPastHero] = useState(!isHome);
   const navItems = homePageContent.nav as readonly NavItem[];
   const homeHash = (href: string) => (href.startsWith("#") ? `/${href}` : href);
 
-  useIsoLayoutEffect(() => {
-    if (!isHome) {
-      setPastHero(true);
-      return;
-    }
-
+  useEffect(() => {
+    const html = document.documentElement;
     let frame = 0;
-    const update = () => {
-      frame = 0;
-      setPastHero(window.scrollY > window.innerHeight - 100);
+
+    const compute = () => {
+      if (isOpen) return false;
+      if (pathname !== "/") return false;
+      return window.scrollY <= window.innerHeight - 100;
     };
+
+    const apply = () => {
+      frame = 0;
+      html.toggleAttribute("data-hero-visible", compute());
+    };
+
     const onScroll = () => {
       if (frame) return;
-      frame = window.requestAnimationFrame(update);
+      frame = window.requestAnimationFrame(apply);
     };
 
-    update();
+    apply();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", update, { passive: true });
+    window.addEventListener("resize", apply, { passive: true });
+    window.addEventListener("pageshow", apply);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", update);
+      window.removeEventListener("resize", apply);
+      window.removeEventListener("pageshow", apply);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, [isHome]);
-
-  const overHero = !pastHero && !isOpen;
+  }, [pathname, isOpen]);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-[1000] transition-colors duration-300 ${
-        overHero ? "bg-transparent" : "bg-white"
-      }`}
+      className="fixed inset-x-0 top-0 z-[1000] bg-white transition-colors duration-300"
+      data-chapeau-header
     >
       <nav className="flex w-full items-center justify-between px-4 py-[10px] tablet:px-10 desktop:px-10">
         <SmartLink
@@ -62,9 +58,8 @@ export function Header() {
         >
           <img
             alt={homePageContent.meta.title}
-            className={`h-full w-full object-contain object-left transition duration-300 ${
-              overHero ? "brightness-0 invert" : ""
-            }`}
+            className="h-full w-full object-contain object-left transition duration-300"
+            data-header-logo
             src={homePageContent.headerLogo}
           />
         </SmartLink>
@@ -73,11 +68,8 @@ export function Header() {
           {navItems.map((item) => (
             <SmartLink
               key={item.label}
-              className={`group inline-flex h-[33px] items-center justify-center text-[14px] font-medium leading-[1.4] tracking-normal transition-colors font-display ${
-                overHero
-                  ? "text-white hover:text-white/80"
-                  : "text-ink-soft hover:text-accent-dark"
-              }`}
+              className="group inline-flex h-[33px] items-center justify-center font-display text-[14px] font-medium leading-[1.4] tracking-normal text-ink-soft transition-colors hover:text-accent-dark"
+              data-nav-link
               href={homeHash(item.href)}
             >
               <span>{item.label}</span>
@@ -89,7 +81,7 @@ export function Header() {
           className="hidden items-center justify-center gap-2 rounded-full bg-accent px-4 py-2 text-[14px] font-medium leading-[1.4] text-white shadow-button tablet:inline-flex desktop:inline-flex"
           href="/#book-a-call-section"
         >
-          Let's Talk
+          Let&apos;s Talk
         </SmartLink>
 
         <button
@@ -101,14 +93,16 @@ export function Header() {
         >
           <span className="relative block h-[20px] w-[20px]">
             <span
-              className={`absolute left-0 top-[8px] h-[2px] w-full transition-all duration-300 ${
-                overHero ? "bg-white" : "bg-ink"
-              } ${isOpen ? "translate-y-[2px] rotate-45" : ""}`}
+              className={`absolute left-0 top-[8px] h-[2px] w-full bg-ink transition-all duration-300 ${
+                isOpen ? "translate-y-[2px] rotate-45" : ""
+              }`}
+              data-burger-line
             />
             <span
-              className={`absolute left-0 top-[12px] h-[2px] w-full transition-all duration-300 ${
-                overHero ? "bg-white" : "bg-ink"
-              } ${isOpen ? "-translate-y-[2px] -rotate-45" : ""}`}
+              className={`absolute left-0 top-[12px] h-[2px] w-full bg-ink transition-all duration-300 ${
+                isOpen ? "-translate-y-[2px] -rotate-45" : ""
+              }`}
+              data-burger-line
             />
           </span>
         </button>
@@ -127,7 +121,7 @@ export function Header() {
               {navItems.map((item) => (
                 <SmartLink
                   key={item.label}
-                  className="flex items-center gap-[2px] text-[14px] font-medium leading-[1.4] text-ink-soft font-display"
+                  className="flex items-center gap-[2px] font-display text-[14px] font-medium leading-[1.4] text-ink-soft"
                   href={homeHash(item.href)}
                   onClick={() => setIsOpen(false)}
                 >
@@ -139,7 +133,7 @@ export function Header() {
                 href="/#book-a-call-section"
                 onClick={() => setIsOpen(false)}
               >
-                Let's Talk
+                Let&apos;s Talk
               </SmartLink>
             </div>
           </motion.div>

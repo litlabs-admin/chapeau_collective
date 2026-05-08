@@ -41,10 +41,21 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      className="scroll-smooth"
+      data-scroll-behavior="smooth"
+      suppressHydrationWarning
+    >
       <body
         className={`${aeonik.variable} bg-canvas font-body text-ink antialiased`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              '(function(){try{var h=document.documentElement;var i=location.pathname==="/";var a=window.scrollY<=window.innerHeight-100;if(i&&a)h.setAttribute("data-hero-visible","");}catch(e){}})();'
+          }}
+        />
         {children}
       </body>
     </html>

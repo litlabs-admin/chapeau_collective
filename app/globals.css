@@ -116,4 +116,24 @@
       transform: translateX(calc(-700px - 200px));
     }
   }
+
+  [data-hero-visible] header[data-chapeau-header] {
+    background-color: transparent !important;
+  }
+
+  [data-hero-visible] header[data-chapeau-header] [data-header-logo] {
+    filter: brightness(0) invert(1);
+  }
+
+  [data-hero-visible] header[data-chapeau-header] [data-nav-link] {
+    color: #ffffff !important;
+  }
+
+  [data-hero-visible] header[data-chapeau-header] [data-nav-link]:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+
+  [data-hero-visible] header[data-chapeau-header] [data-burger-line] {
+    background-color: #ffffff;
+  }
 }
