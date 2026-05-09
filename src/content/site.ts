@@ -141,31 +141,64 @@ export const homePageContent = {
     ],
     cards: [
       {
-        title: "Sharper positioning turned a scattered marketing function into a focused growth engine.",
+        title:
+          "From start-up to credible scale-up record Q1 sales for an EV charger manufacturer, Q2 set to surpass.",
         quote:
-          "Chapeau helped us get clear on who we were speaking to, what mattered and where our marketing effort should actually go.",
-        person: "Isla Campbell, Managing Director",
-        company: "Kinitic Advisory",
-        avatar: asset("images/testimonials/priya-shah-avatar.png"),
-        mediaSrc: asset("images/testimonials/northline-advisory-media.png")
+          "Repositioned us as a credible, integration-ready partner in fleet and energy EV conversations a crucial step on our scale-up journey.",
+        person: "Fraser Koefman, Commercial Director",
+        company: "VCHRGD",
+        avatar: asset("images/testimonials/fraser-koefman-avatar.jpg"),
+        mediaSrc: asset("images/testimonials/vchrgd-media.png")
       },
       {
-        title: "A clearer sales process helped the team move opportunities faster and close with more confidence.",
+        title:
+          "Built a targeted B2B marketing engine for an independent pension platform meetings booked with key influencers.",
         quote:
-          "The team brought structure to our pipeline without overcomplicating it. We finally had a repeatable way to turn interest into revenue.",
-        person: "Daniel Carter, Commercial Director",
-        company: "Aura Consulting",
-        avatar: asset("images/testimonials/daniel-carter-avatar.png"),
-        mediaSrc: asset("images/testimonials/summitbridge-media.png")
+          "Phenomenal response. Our most recent article alone produced 16 follow-ups from 102 readers many of them people we'd been trying to reach for months.",
+        person: "Philip Hodges, Director",
+        company: "Guiide",
+        avatar: asset("images/testimonials/philip-hodges-avatar.jpg"),
+        mediaSrc: asset("images/testimonials/guiide-media.png")
       },
       {
-        title: "Practical AI workflows reduced manual work and gave the business more room to scale.",
+        title:
+          "Joined a salary-sacrifice provider as fractional CMO and head of EV product marketing and sales aligned end-to-end.",
         quote:
-          "Chapeau made AI feel useful, not abstract. The workflows they built saved time, improved handoffs and gave our team better visibility.",
-        person: "Alex Morgan, Operations Lead",
-        company: "Nexus Group",
-        avatar: asset("images/testimonials/alex-morgan-avatar.png"),
-        mediaSrc: asset("images/testimonials/civitas-enterprise-media.png")
+          "Gordon's ability to flow seamlessly from marketing to commercial was a significant asset. He planned, led and consistently delivered.",
+        person: "Iain Bennett, Managing Director",
+        company: "Gofor",
+        avatar: asset("images/testimonials/iain-bennett-avatar.jpg"),
+        mediaSrc: asset("images/testimonials/gofor-media.png")
+      },
+      {
+        title:
+          "Pivoted a global BPO from generic marketing to a sector-led growth strategy across four verticals.",
+        quote:
+          "Instrumental in delivering our first-ever sector-based marketing strategy and a collaborative, supportive leader for the team.",
+        person: "Polly Ashdown, Director of Communications",
+        company: "Concentrix (formerly Webhelp)",
+        avatar: asset("images/testimonials/polly-ashdown-avatar.jpg"),
+        mediaSrc: asset("images/testimonials/concentrix-media.png")
+      },
+      {
+        title:
+          "Led customer acquisition through FreeAgent's transition from small business to RBS-owned scale-up.",
+        quote:
+          "Pivotal in placing our brand story at the heart of both our B2B and D2C acquisition strategies during a critical growth transition.",
+        person: "Sandra Milne, Head of Brand Strategy and Planning",
+        company: "FreeAgent",
+        avatar: asset("images/testimonials/sandra-milne-avatar.jpg"),
+        mediaSrc: asset("images/testimonials/freeagent-media.png")
+      },
+      {
+        title:
+          "Combined strategy, creative execution and brand positioning to accelerate a PR firm's visibility and authority.",
+        quote:
+          "They became a real strategic partner in growth fast-moving, long-term thinking, and consistently bringing ideas that drove results.",
+        person: "Ben Roc, Founder",
+        company: "VenturePR",
+        avatar: asset("images/testimonials/ben-roc-avatar.jpg"),
+        mediaSrc: asset("images/testimonials/venturepr-media.png")
       }
     ] satisfies MediaCard[]
   },

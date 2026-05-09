@@ -120,7 +120,7 @@ export function TeamSection() {
 
             <fieldset
               aria-label="Carousel pagination controls"
-              className="pointer-events-none absolute inset-0 m-0 hidden items-center justify-between border-0 p-5 tablet:flex desktop:flex"
+              className="pointer-events-none absolute inset-x-0 top-[calc(50vw-40px)] m-0 flex items-center justify-between border-0 px-3 tablet:inset-y-0 tablet:px-5 tablet:py-5 desktop:inset-y-0 desktop:px-5 desktop:py-5"
             >
               <button
                 aria-label="Previous"

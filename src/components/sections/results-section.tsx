@@ -64,10 +64,10 @@ export function ResultsSection() {
           </div>
         </div>
 
-        <div className="flex w-full flex-col items-start justify-start gap-10 tablet:flex-row tablet:gap-4 desktop:flex-row desktop:gap-4">
+        <div className="grid w-full grid-cols-1 gap-x-4 gap-y-10 tablet:grid-cols-2 desktop:grid-cols-3">
           {resultCards.map((card) => (
             <article
-              className="flex w-full flex-col items-start gap-4 overflow-hidden tablet:w-px tablet:flex-1 desktop:w-px desktop:flex-1"
+              className="row-span-4 grid grid-rows-subgrid gap-4 overflow-hidden"
               key={card.title}
             >
               <div className="relative h-[300px] w-full overflow-hidden rounded-lg">
@@ -75,38 +75,34 @@ export function ResultsSection() {
                   alt=""
                   className="object-cover"
                   fill
-                  sizes="(min-width: 992px) 389px, (min-width: 768px) 226px, 358px"
+                  sizes="(min-width: 992px) 389px, (min-width: 768px) 339px, 358px"
                   src={card.mediaSrc}
                 />
               </div>
 
-              <div className="flex w-full flex-col items-center justify-end gap-2">
-                <h4 className="card-title w-full">{card.title}</h4>
-              </div>
+              <h4 className="card-title w-full">{card.title}</h4>
 
-              <div className="flex w-full flex-col items-start justify-end gap-6">
-                <p className="font-display text-sm font-medium leading-[1.4] text-ink-soft">
-                  {card.quote}
-                </p>
+              <p className="w-full font-display text-sm font-medium leading-[1.4] text-ink-soft">
+                {card.quote}
+              </p>
 
-                <div className="flex w-full items-center justify-start gap-2">
-                  <div className="relative h-[42px] w-[42px] shrink-0 overflow-hidden rounded-full">
-                    <Image
-                      alt=""
-                      className="object-cover"
-                      fill
-                      sizes="42px"
-                      src={card.avatar}
-                    />
-                  </div>
-                  <div className="flex w-px flex-1 flex-col items-start gap-1">
-                    <p className="w-full font-display text-sm font-medium leading-[1.4] text-ink">
-                      {card.person}
-                    </p>
-                    <p className="w-full font-display text-sm font-medium leading-[1.4] text-accent-dark">
-                      {card.company}
-                    </p>
-                  </div>
+              <div className="flex w-full items-center justify-start gap-2">
+                <div className="relative h-[42px] w-[42px] shrink-0 overflow-hidden rounded-full">
+                  <Image
+                    alt=""
+                    className="object-cover"
+                    fill
+                    sizes="42px"
+                    src={card.avatar}
+                  />
+                </div>
+                <div className="flex w-px flex-1 flex-col items-start gap-1">
+                  <p className="w-full font-display text-sm font-medium leading-[1.4] text-ink">
+                    {card.person}
+                  </p>
+                  <p className="w-full font-display text-sm font-medium leading-[1.4] text-accent-dark">
+                    {card.company}
+                  </p>
                 </div>
               </div>
             </article>
