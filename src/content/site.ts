@@ -144,7 +144,7 @@ export const homePageContent = {
         title:
           "From start-up to credible scale-up record Q1 sales for an EV charger manufacturer, Q2 set to surpass.",
         quote:
-          "Repositioned us as a credible, integration-ready partner in fleet and energy EV conversations a crucial step on our scale-up journey.",
+          "Gordon repositioned us as a credible, integration-ready partner in fleet and energy EV conversations a crucial step on our scale-up journey.",
         person: "Fraser Koefman, Commercial Director",
         company: "VCHRGD",
         avatar: asset("images/testimonials/fraser-koefman-avatar.webp"),
@@ -154,7 +154,7 @@ export const homePageContent = {
         title:
           "Built a targeted B2B marketing engine for an independent pension platform meetings booked with key influencers.",
         quote:
-          "Phenomenal response. Our most recent article alone produced 16 follow-ups from 102 readers many of them people we'd been trying to reach for months.",
+          "Phenomenal response from the engine Gordon built. Our most recent article alone produced 16 follow-ups from 102 readers many of them people we'd been trying to reach for months.",
         person: "Philip Hodges, Director",
         company: "Guiide",
         avatar: asset("images/testimonials/philip-hodges-avatar.webp"),
@@ -164,7 +164,7 @@ export const homePageContent = {
         title:
           "Pivoted a global BPO from generic marketing to a sector-led growth strategy across four verticals.",
         quote:
-          "Instrumental in delivering our first-ever sector-based marketing strategy and a collaborative, supportive leader for the team.",
+          "Gordon was instrumental in delivering our first-ever sector-based marketing strategy and a collaborative, supportive leader for the team.",
         person: "Polly Ashdown, Director of Communications",
         company: "Concentrix (formerly Webhelp)",
         avatar: asset("images/testimonials/polly-ashdown-avatar.webp"),
