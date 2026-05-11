@@ -64,7 +64,7 @@ export function ResultsSection() {
           </div>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-x-4 gap-y-10 tablet:grid-cols-2 desktop:grid-cols-3">
+        <div className="grid w-full grid-cols-1 gap-x-4 gap-y-10 tablet:grid-cols-2 desktop:grid-cols-2">
           {resultCards.map((card) => (
             <article
               className="row-span-4 grid grid-rows-subgrid gap-4 overflow-hidden"
@@ -75,7 +75,7 @@ export function ResultsSection() {
                   alt=""
                   className="object-cover"
                   fill
-                  sizes="(min-width: 992px) 389px, (min-width: 768px) 339px, 358px"
+                  sizes="(min-width: 992px) 592px, (min-width: 768px) 339px, 358px"
                   src={card.mediaSrc}
                 />
               </div>

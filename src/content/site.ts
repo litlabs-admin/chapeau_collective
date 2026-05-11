@@ -133,8 +133,8 @@ export const homePageContent = {
       "We don't just talk performance . We deliver it. Our clients don't just see growth, they experience transformation. Here's a glimpse of what we've done.",
     logosHeading: "Clients include",
     logos: [
-      asset("images/clients/racam_logo.png"),
-      asset("images/clients/roswell_logo.png"),
+      asset("images/clients/racam_logo.webp"),
+      asset("images/clients/roswell_logo.webp"),
       asset("images/clients/kinitic.svg"),
       asset("images/clients/aura.svg"),
       asset("images/clients/nexus.svg")
@@ -147,8 +147,8 @@ export const homePageContent = {
           "Repositioned us as a credible, integration-ready partner in fleet and energy EV conversations a crucial step on our scale-up journey.",
         person: "Fraser Koefman, Commercial Director",
         company: "VCHRGD",
-        avatar: asset("images/testimonials/fraser-koefman-avatar.jpg"),
-        mediaSrc: asset("images/testimonials/vchrgd-media.png")
+        avatar: asset("images/testimonials/fraser-koefman-avatar.webp"),
+        mediaSrc: asset("images/testimonials/vchrgd-media.webp")
       },
       {
         title:
@@ -157,18 +157,8 @@ export const homePageContent = {
           "Phenomenal response. Our most recent article alone produced 16 follow-ups from 102 readers many of them people we'd been trying to reach for months.",
         person: "Philip Hodges, Director",
         company: "Guiide",
-        avatar: asset("images/testimonials/philip-hodges-avatar.jpg"),
-        mediaSrc: asset("images/testimonials/guiide-media.png")
-      },
-      {
-        title:
-          "Joined a salary-sacrifice provider as fractional CMO and head of EV product marketing and sales aligned end-to-end.",
-        quote:
-          "Gordon's ability to flow seamlessly from marketing to commercial was a significant asset. He planned, led and consistently delivered.",
-        person: "Iain Bennett, Managing Director",
-        company: "Gofor",
-        avatar: asset("images/testimonials/iain-bennett-avatar.jpg"),
-        mediaSrc: asset("images/testimonials/gofor-media.png")
+        avatar: asset("images/testimonials/philip-hodges-avatar.webp"),
+        mediaSrc: asset("images/testimonials/guiide-media.webp")
       },
       {
         title:
@@ -177,18 +167,8 @@ export const homePageContent = {
           "Instrumental in delivering our first-ever sector-based marketing strategy and a collaborative, supportive leader for the team.",
         person: "Polly Ashdown, Director of Communications",
         company: "Concentrix (formerly Webhelp)",
-        avatar: asset("images/testimonials/polly-ashdown-avatar.jpg"),
-        mediaSrc: asset("images/testimonials/concentrix-media.png")
-      },
-      {
-        title:
-          "Led customer acquisition through FreeAgent's transition from small business to RBS-owned scale-up.",
-        quote:
-          "Pivotal in placing our brand story at the heart of both our B2B and D2C acquisition strategies during a critical growth transition.",
-        person: "Sandra Milne, Head of Brand Strategy and Planning",
-        company: "FreeAgent",
-        avatar: asset("images/testimonials/sandra-milne-avatar.jpg"),
-        mediaSrc: asset("images/testimonials/freeagent-media.png")
+        avatar: asset("images/testimonials/polly-ashdown-avatar.webp"),
+        mediaSrc: asset("images/testimonials/concentrix-media.webp")
       },
       {
         title:
@@ -197,8 +177,8 @@ export const homePageContent = {
           "They became a real strategic partner in growth fast-moving, long-term thinking, and consistently bringing ideas that drove results.",
         person: "Ben Roc, Founder",
         company: "VenturePR",
-        avatar: asset("images/testimonials/ben-roc-avatar.jpg"),
-        mediaSrc: asset("images/testimonials/venturepr-media.png")
+        avatar: asset("images/testimonials/ben-roc-avatar.webp"),
+        mediaSrc: asset("images/testimonials/venturepr-media.webp")
       }
     ] satisfies MediaCard[]
   },
@@ -245,7 +225,7 @@ export const homePageContent = {
         role: "Marketing & Strategy Lead",
         bio:
           "Gordon is a marketing specialist with nearly 20 years of experience across SaaS, financial services, management consultancy and more. He learns new markets fast and focuses energy where it counts. As founder of GR23 Marketing and a veteran of organisations like Concentrix and Ageas, Gordon brings practical strategy, clear messaging and genuine commercial momentum to the Collective.",
-        image: asset("images/team/gordon-ross.png"),
+        image: asset("images/team/gordon-ross.webp"),
         objectPosition: "center",
         linkedin: "https://www.linkedin.com/in/gordonross1/"
       },
@@ -254,7 +234,7 @@ export const homePageContent = {
         role: "Sales & Revenue Lead",
         bio:
           "Will brings a career-long depth of expertise in B2B sales performance spanning leadership, methodology, coaching and execution. As part of the highly regarded Sales Geek franchise, Will helps businesses build predictable, repeatable revenue generation systems. He aligns high-performance process design with coaching discipline to turn pipeline into profit.",
-        image: asset("images/team/will-sinclair.jpeg"),
+        image: asset("images/team/will-sinclair.webp"),
         objectPosition: "center",
         linkedin: "https://www.linkedin.com/in/willsinclairsalesgeek/"
       },
@@ -263,7 +243,7 @@ export const homePageContent = {
         role: "AI & Digital Operations Lead",
         bio:
           "Vandan has spent almost a decade delivering digital-led strategies and campaigns for large-scale corporate enterprises through his agency LitLabs. He brings a scale-up mindset to everything he works on delivering practical AI workflows, automation agents and multichannel digital advertising that give businesses a genuine operational edge.",
-        image: asset("images/team/vandan-mandloi.jpeg"),
+        image: asset("images/team/vandan-mandloi.webp"),
         linkedin: "https://www.linkedin.com/in/vandan-mandloi/",
         objectPosition: "center"
       }
