@@ -51,8 +51,8 @@ const asset = (path: string) => `/${path}`;
 
 export const homePageContent = {
   meta: {
-    title: "Chapeau Collective",
-    description: "Chapeau Collective"
+    title: "Chapeau Collective | Marketing, Sales & AI Growth Consultancy",
+    description: "Chapeau Collective helps scaling businesses grow through strategic marketing, sales acceleration, and practical AI-powered solutions."
   },
   logo: asset("chapeau-collective-logo.svg"),
   headerLogo: asset("chapeau-collective-header-logo.svg"),
